@@ -54,6 +54,10 @@ nav a:hover {
   text-decoration: underline;
 }
 
+nav a.active {
+  color: green;
+}
+
 /* Main content */
 main {
   text-align: left;   /* left-aligned text inside centered column */
