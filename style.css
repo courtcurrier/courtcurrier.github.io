@@ -124,16 +124,26 @@ main {
   flex-wrap: wrap;           /* stacks on small screens */
 }
 
-.about-left,
-.about-right {
-  flex: 1 1 350px;          /* slightly wider minimum */
-  max-width: 450px;          /* allows columns to expand */
-  text-align: left;          /* left-align text inside each column */
+/* Left column wider */
+.about-left {
+  flex: 2 1 400px;          /* twice the width of the right column */
+  max-width: 600px;          /* optional limit for large screens */
+  text-align: left;
 }
 
+/* Right column narrower */
+.about-right {
+  flex: 1 1 200px;          /* narrower column for contact info */
+  max-width: 350px;
+  text-align: left;
+}
+
+/* Headings in About page columns */
 .about-left h2,
 .about-right h2 {
   margin-top: 0;
+  font-size: 1.2em;    /* smaller than default h2 */
+  font-weight: bold;    /* keep it bold, optional */
 }
 
 /* Links in right column */
