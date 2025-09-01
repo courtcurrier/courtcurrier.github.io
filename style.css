@@ -103,7 +103,7 @@ main {
 }
 
 .about-photo img {
-  max-width: 1200px;    /* smaller than before */
+  max-width: 1200px;    
   width: 100%;
   height: auto;
   display: block;       /* ensures proper centering */
