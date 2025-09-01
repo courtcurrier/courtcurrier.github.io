@@ -106,6 +106,34 @@ main {
   border-radius: 10px;
 }
 
+/* Contact page photo */
+.contact-photo {
+  text-align: center;
+  margin: 2em 0;
+}
+
+.contact-photo img {
+  max-width: 250px;     /* adjust size as needed */
+  width: 100%;
+  border-radius: 50%;   /* makes it circular */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Contact info styling */
+.contact-info {
+  text-align: center;
+  line-height: 1.8;
+}
+
+.contact-info a {
+  color: green;         /* matches your nav active color */
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
 
 
 
