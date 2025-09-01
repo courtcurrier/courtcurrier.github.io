@@ -67,28 +67,41 @@ main {
 }
 
 /* Hero gallery (4 images) */
+/* Hero gallery - single-image slideshow */
 .hero-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;  /* center all images */
-  gap: 1em;
-  margin-top: 2em;
+  position: relative;
+  width: 100%;
+  max-width: 300px;   /* keeps sizing from before */
+  height: auto;
+  margin: 2em auto 0 auto;  /* center gallery */
 }
 
 .hero-image {
-  max-width: 300px;       /* controls size */
+  position: absolute;   /* stack images on top of each other */
+  top: 0;
+  left: 0;
   width: 100%;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  opacity: 1;
-  animation: fade 12s infinite;
+  opacity: 0;
+  animation: fade 16s infinite;
 }
 
-/* Simple fade animation */
+/* Assign delays for each image to stagger the fade */
+.hero-image:nth-child(1) { animation-delay: 0s; }
+.hero-image:nth-child(2) { animation-delay: 4s; }
+.hero-image:nth-child(3) { animation-delay: 8s; }
+.hero-image:nth-child(4) { animation-delay: 12s; }
+
+/* Fade animation */
 @keyframes fade {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  25% { opacity: 1; }
+  35% { opacity: 0; }
+  100% { opacity: 0; }
 }
+
 
 
