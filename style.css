@@ -76,9 +76,10 @@ main {
 /* ===========================
    Home page Vimeo video
 =========================== */
+/* Home page Vimeo video */
 .hero-video-wrapper {
   width: 100%;
-  max-width: 1200px;       /* bigger than before */
+  max-width: 1400px;      /* increase maximum width */
   margin: 2em auto;
   border-radius: 10px;
   overflow: hidden;
