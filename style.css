@@ -98,8 +98,9 @@ main {
 }
 
 /* ===========================
-   About page photo
+   About page 
 =========================== */
+
 .about-photo {
   text-align: center;
   margin: 2em 0;
@@ -107,32 +108,11 @@ main {
 
 .about-photo img {
   width: 100%;
-  max-width: 400px;      /* adjust larger/smaller as desired */
+  max-width: 500px;      /* increase so photo is larger */
   height: auto;
   display: block;
   margin: 0 auto;
-  border-radius: 0;      /* rectangular */
-}
-
-/* About page info */
-.about-info {
-  text-align: center;
-  line-height: 1.8;
-  margin-top: 1em;
-}
-
-.about-details {
-  margin-bottom: 1em;
-}
-
-.about-links a {
-  margin-right: 10px;
-  color: green;
-  text-decoration: none;
-}
-
-.about-links a:hover {
-  text-decoration: underline;
+  border-radius: 0;
 }
 
 /* Two-column layout under About photo */
@@ -146,9 +126,9 @@ main {
 
 .about-left,
 .about-right {
-  flex: 1 1 300px;          /* each column takes equal space, min 300px */
-  max-width: 400px;         /* optional: limit column width */
-  text-align: left;         /* left-align text inside each column */
+  flex: 1 1 350px;          /* slightly wider minimum */
+  max-width: 450px;          /* allows columns to expand */
+  text-align: left;          /* left-align text inside each column */
 }
 
 .about-left h2,
@@ -156,3 +136,14 @@ main {
   margin-top: 0;
 }
 
+/* Links in right column */
+.about-right a {
+  display: inline-block;
+  margin-right: 10px;
+  color: green;
+  text-decoration: none;
+}
+
+.about-right a:hover {
+  text-decoration: underline;
+}
