@@ -135,38 +135,24 @@ main {
   text-decoration: underline;
 }
 
-/* ===========================
-   Contact page photo & info
-=========================== */
-.contact-photo {
-  text-align: center;
+/* Two-column layout under About photo */
+.about-columns {
+  display: flex;
+  justify-content: center;  /* centers the two columns as a group */
+  gap: 3em;                 /* space between left and right columns */
   margin: 2em 0;
+  flex-wrap: wrap;           /* stacks on small screens */
 }
 
-.contact-photo img {
-  width: 100%;
-  max-width: 250px;
-  display: block;
-  margin: 0 auto;
-  border-radius: 0;
+.about-left,
+.about-right {
+  flex: 1 1 300px;          /* each column takes equal space, min 300px */
+  max-width: 400px;         /* optional: limit column width */
+  text-align: left;         /* left-align text inside each column */
 }
 
-.contact-info {
-  text-align: center;
-  line-height: 1.8;
-  margin-top: 1em;
+.about-left h2,
+.about-right h2 {
+  margin-top: 0;
 }
 
-.contact-details {
-  margin-bottom: 0.8em;
-}
-
-.contact-links a {
-  margin-right: 10px;
-  color: green;
-  text-decoration: none;
-}
-
-.contact-links a:hover {
-  text-decoration: underline;
-}
