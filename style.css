@@ -19,10 +19,11 @@ body {
 
 /* Header and navigation */
 header {
-  text-align: center;  /* header elements centered */
-  background: #ffffff;
+  text-align: center;        /* center elements in header */
+  background: #ffffff;       /* white background instead of gray */
   padding: 1em 0;
   border-bottom: 1px solid #ddd;
+  display: block;            /* ensures main content is below header */
 }
 
 h1 {
@@ -34,6 +35,11 @@ h1 {
   font-style: italic;
   color: #555;
   margin: 0.2em 0 1em 0;
+  display: block;  /* makes tagline appear on a new line */
+}
+
+nav {
+  margin-top: 0.5em;
 }
 
 nav a {
@@ -51,6 +57,7 @@ nav a:hover {
 main {
   text-align: left;   /* left-aligned text inside centered column */
   line-height: 1.6;
+  margin-top: 1em;    /* space between header and main content */
 }
 
 /* Hero photo for homepage */
@@ -63,4 +70,3 @@ main {
   margin-bottom: 2em; /* adds spacing below the photo */
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
-
