@@ -66,7 +66,7 @@ main {
 /* Hero video (home page) */
 .hero-video-wrapper {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1400px;
   margin: 2em auto;
   border-radius: 10px;
   overflow: hidden;
@@ -97,23 +97,16 @@ main {
   border-radius: 0;   /* rectangular photo */
 }
 
-/* About page info */
-.about-info {
+.about-photo {
   text-align: center;
-  line-height: 1.8;
-  margin-top: 1em;
+  margin: 2em 0;
 }
 
-.about-details {
-  margin-bottom: 1em;
-}
-
-.about-links a {
-  margin-right: 10px;
-  color: #5ea1db;
-  text-decoration: none;
-}
-
-.about-links a:hover {
-  text-decoration: underline;
+.about-photo img {
+  max-width: 200px;    /* smaller than before */
+  width: 100%;
+  height: auto;
+  display: block;       /* ensures proper centering */
+  margin: 0 auto;       /* horizontally center the image */
+  border-radius: 0;     /* keep rectangular */
 }
