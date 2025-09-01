@@ -20,7 +20,7 @@ body {
 /* Header and navigation */
 header {
   text-align: center;  /* header elements centered */
-  background: #ffffff;
+  background: #f8f8f8;
   padding: 1em 0;
   border-bottom: 1px solid #ddd;
 }
@@ -43,4 +43,24 @@ nav a {
   font-weight: bold;
 }
 
-n
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main content */
+main {
+  text-align: left;   /* left-aligned text inside centered column */
+  line-height: 1.6;
+}
+
+/* Hero photo for homepage */
+.hero-photo {
+  max-width: 600px;   /* limits the photo width */
+  width: 100%;        /* scales down on smaller screens */
+  height: auto;       /* keeps aspect ratio */
+  border-radius: 10px;
+  margin-top: 2em;
+  margin-bottom: 2em; /* adds spacing below the photo */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
