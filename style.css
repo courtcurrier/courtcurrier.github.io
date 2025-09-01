@@ -85,20 +85,35 @@ main {
   border-radius: 10px;
 }
 
-/* Contact page photo */
-.contact-photo {
+/* About page photo */
+.about-photo {
   text-align: center;
   margin: 2em 0;
 }
 
-.contact-photo img {
+.about-photo img {
   max-width: 250px;
   width: 100%;
-  border-radius: 0;   /* keep rectangular photo */
+  border-radius: 0;   /* rectangular photo */
 }
 
-/* Contact info styling */
-.contact-info {
+/* About page info */
+.about-info {
   text-align: center;
   line-height: 1.8;
   margin-top: 1em;
+}
+
+.about-details {
+  margin-bottom: 1em;
+}
+
+.about-links a {
+  margin-right: 10px;
+  color: #5ea1db;
+  text-decoration: none;
+}
+
+.about-links a:hover {
+  text-decoration: underline;
+}
