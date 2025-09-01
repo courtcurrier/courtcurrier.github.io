@@ -92,7 +92,7 @@ main {
 }
 
 .about-photo img {
-  max-width: 1400px;
+  max-width: 2000px;
   width: 100%;
   border-radius: 0;   /* rectangular photo */
 }
