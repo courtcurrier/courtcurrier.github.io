@@ -92,21 +92,10 @@ main {
 }
 
 .about-photo img {
-  max-width: 1200px;
-  width: 100%;
-  border-radius: 0;   /* rectangular photo */
-}
-
-.about-photo {
-  text-align: center;
-  margin: 2em 0;
-}
-
-.about-photo img {
-  max-width: 1200px;    
-  width: 100%;
-  height: auto;
-  display: block;       /* ensures proper centering */
-  margin: 0 auto;       /* horizontally center the image */
-  border-radius: 0;     /* keep rectangular */
+  width: 100%;           /* fills wrapper width responsively */
+  max-width: 400px;      /* scales up to 400px on large screens */
+  height: auto;          /* maintain aspect ratio */
+  display: block;        /* ensures proper centering */
+  margin: 0 auto;        /* horizontally center the image */
+  border-radius: 0;      /* keep rectangular */
 }
