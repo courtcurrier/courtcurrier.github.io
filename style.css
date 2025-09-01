@@ -109,7 +109,7 @@ main {
 
 .about-photo img {
   width: 100%;
-  max-width: 1200;      /* increase so photo is larger */
+  max-width: 600px;      /* fixed: use px unit */
   height: auto;
   display: block;
   margin: 0 auto;
@@ -128,13 +128,13 @@ main {
 /* Left column wider */
 .about-left {
   flex: 2 1 400px;          /* twice the width of the right column */
-  max-width: 600px;          /* optional limit for large screens */
+  max-width: 600px;
   text-align: left;
 }
 
 /* Right column narrower */
 .about-right {
-  flex: 1 1 200px;          /* narrower column for contact info */
+  flex: 1 1 200px;          
   max-width: 350px;
   text-align: left;
 }
@@ -143,8 +143,9 @@ main {
 .about-left h2,
 .about-right h2 {
   margin-top: 0;
-  font-size: 1.2em;    /* smaller than default h2 */
-  font-weight: bold;    /* keep it bold, optional */
+  font-size: 1em;       /* make it the same size as normal text */
+  font-weight: bold;
+  margin-bottom: 0.5em; /* less spacing below headings */
 }
 
 /* Links in right column */
