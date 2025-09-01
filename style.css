@@ -78,10 +78,10 @@ main {
 /* ===========================
    Home page Vimeo video
 =========================== */
-/* Home page Vimeo video */
+
 .hero-video-wrapper {
   width: 100%;
-  max-width: 1400px;      /* increase maximum width */
+  max-width: 1400%;      /* increase maximum width */
   margin: 2em auto;
   border-radius: 10px;
   overflow: hidden;
@@ -111,7 +111,7 @@ main {
 
 .about-photo img {
   width: 100%;
-  max-width: 1000px;      /* fixed: use px unit */
+  max-width: 1400%;      /* fixed: use px unit */
   height: auto;
   display: block;
   margin: 0 auto;
