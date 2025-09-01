@@ -108,7 +108,7 @@ main {
 
 .about-photo img {
   width: 100%;
-  max-width: 500px;      /* increase so photo is larger */
+  max-width: 1200;      /* increase so photo is larger */
   height: auto;
   display: block;
   margin: 0 auto;
