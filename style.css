@@ -5,7 +5,7 @@ body {
   padding: 0;
   background: #ffffff;
   color: #333;
-  justify-content: center;  /* centers the content column horizontally */
+  /* remove display: flex so pages stack normally */
 }
 
 /* Wrapper for single-column layout */
@@ -14,15 +14,15 @@ body {
   width: 100%;
   padding: 2em;
   box-sizing: border-box;
+  margin: 0 auto;      /* centers content */
 }
 
 /* Header and navigation */
 header {
-  text-align: center;        /* center elements in header */
-  background: #ffffff;       /* white background */
+  text-align: center;
+  background: #ffffff;
   padding: 1em 0;
   border-bottom: 1px solid #ddd;
-  display: block;            /* ensures header takes full width */
   width: 100%;
 }
 
@@ -35,7 +35,6 @@ h1 {
   font-style: italic;
   color: #555;
   margin: 0.2em 0 1em 0;
-  display: block;  /* tagline on new line */
 }
 
 nav {
@@ -59,34 +58,15 @@ nav a.active {
 
 /* Main content */
 main {
-  text-align: left;   /* left-aligned text inside centered column */
+  text-align: left;
   line-height: 1.6;
-  margin-top: 1em;    /* space between header and main content */
-  clear: both;        /* ensures content sits below header */
+  margin-top: 1em;
 }
 
-/* Hero gallery (4 images) */
-.hero-gallery {
-  display: flex;
-  flex-wrap: wrap;          /* allows images to wrap on smaller screens */
-  justify-content: center;  /* center the row */
-  gap: 1em;                 /* space between images */
-  margin-top: 2em;
-}
-
-.hero-image {
-  max-width: 300px;         /* keeps sizing from before */
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  opacity: 1;               /* fully visible */
-  animation: none;          /* remove any previous animations */
-}
-
+/* Hero video (home page) */
 .hero-video-wrapper {
   width: 100%;
-  max-width: 1000px;       /* bigger than before */
+  max-width: 1000px;
   margin: 2em auto;
   border-radius: 10px;
   overflow: hidden;
@@ -106,39 +86,19 @@ main {
 }
 
 /* Contact page photo */
-.contact-photo img {
-  max-width: 250px;   /* scales photo nicely */
-  width: 100%;
-  border-radius: 0;   /* remove the circle */
+.contact-photo {
+  text-align: center;
+  margin: 2em 0;
 }
 
 .contact-photo img {
   max-width: 250px;
   width: 100%;
-  border-radius: 0;   /* original rectangular photo */
+  border-radius: 0;   /* keep rectangular photo */
 }
 
+/* Contact info styling */
 .contact-info {
   text-align: center;
   line-height: 1.8;
   margin-top: 1em;
-  margin: 2em 0;
-}
-
-.contact-info a {
-  color: green;
-  text-decoration: none;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
-}
-
-.contact-details {
-  margin-bottom: 0.8em;  /* space between address and links */
-}
-
-
-
-
-
