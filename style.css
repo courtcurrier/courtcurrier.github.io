@@ -68,20 +68,21 @@ main {
 
 /* Hero gallery (4 images) */
 .hero-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  /* center all images */
   gap: 1em;
-  justify-items: center;  /* centers images in each grid cell */
   margin-top: 2em;
 }
 
 .hero-image {
-  max-width: 100%;
+  max-width: 300px;       /* controls size */
+  width: 100%;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  opacity: 1;
   animation: fade 12s infinite;
-  transition: opacity 1s ease-in-out;
 }
 
 /* Simple fade animation */
@@ -89,3 +90,5 @@ main {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
+
+
