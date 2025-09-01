@@ -20,10 +20,11 @@ body {
 /* Header and navigation */
 header {
   text-align: center;        /* center elements in header */
-  background: #ffffff;       /* white background instead of gray */
+  background: #ffffff;       /* white background */
   padding: 1em 0;
   border-bottom: 1px solid #ddd;
-  display: block;            /* ensures main content is below header */
+  display: block;            /* ensures header takes full width */
+  width: 100%;
 }
 
 h1 {
@@ -35,7 +36,7 @@ h1 {
   font-style: italic;
   color: #555;
   margin: 0.2em 0 1em 0;
-  display: block;  /* makes tagline appear on a new line */
+  display: block;  /* tagline on new line */
 }
 
 nav {
@@ -58,15 +59,29 @@ main {
   text-align: left;   /* left-aligned text inside centered column */
   line-height: 1.6;
   margin-top: 1em;    /* space between header and main content */
+  clear: both;        /* ensures content sits below header */
 }
 
-/* Hero photo for homepage */
-.hero-photo {
-  max-width: 600px;   /* limits the photo width */
-  width: 100%;        /* scales down on smaller screens */
-  height: auto;       /* keeps aspect ratio */
-  border-radius: 10px;
+/* Hero gallery (4 images) */
+.hero-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1em;
+  justify-items: center;  /* centers images in each grid cell */
   margin-top: 2em;
-  margin-bottom: 2em; /* adds spacing below the photo */
+}
+
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  animation: fade 12s infinite;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Simple fade animation */
+@keyframes fade {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
