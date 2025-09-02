@@ -84,9 +84,8 @@ nav a.active {
 main {
   text-align: left;
   line-height: 1.6;
-  margin-top: 0;   /* remove extra space above main */
+  margin-top: 0;        /* same spacing below header on all pages */
 }
-
 
 /* ===========================
    Home page Vimeo video
