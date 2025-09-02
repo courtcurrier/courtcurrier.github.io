@@ -29,12 +29,12 @@ const siteImages = {
     { src: "images/fieldwork/jrn_6.jpg", caption: "Jornada LTER, NM, USA" }
   ],
   "Minnesota": [
-    { src: "images/fieldwork/cdr_1.jpg", caption: "Cedar Creek LTER, MN, USA" },
-    { src: "images/fieldwork/cdr_2.jpg", caption: "Cedar Creek LTER, MN, USA" },
-    { src: "images/fieldwork/cdr_3.jpg", caption: "Cedar Creek LTER, MN, USA" },
-    { src: "images/fieldwork/cdr_4.jpg", caption: "Cedar Creek LTER, MN, USA" },
-    { src: "images/fieldwork/cdr_5.jpg", caption: "Cedar Creek LTER, MN, USA" },
-    { src: "images/fieldwork/cdr_6.jpg", caption: "Cedar Creek LTER, MN, USA" }
+    { src: "images/fieldwork/cdr_1.JPG", caption: "Cedar Creek LTER, MN, USA" },
+    { src: "images/fieldwork/cdr_2.JPG", caption: "Cedar Creek LTER, MN, USA" },
+    { src: "images/fieldwork/cdr_3.JPG", caption: "Cedar Creek LTER, MN, USA" },
+    { src: "images/fieldwork/cdr_4.JPG", caption: "Cedar Creek LTER, MN, USA" },
+    { src: "images/fieldwork/cdr_5.JPG", caption: "Cedar Creek LTER, MN, USA" },
+    { src: "images/fieldwork/cdr_6.JPG", caption: "Cedar Creek LTER, MN, USA" }
   ],
   "Colorado": [
     { src: "images/fieldwork/cper_1.jpg", caption: "Central Plains Experimental Range, CO, USA" },
