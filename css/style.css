@@ -368,6 +368,15 @@ details p {
 .prev { left: 0; }
 .next { right: 0; }
 
+.fieldwork .intro {
+  margin-bottom: 0; /* no gap under text */
+}
+
+.fieldwork .map-wrapper.flush {
+  margin-top: 0; /* no gap above map */
+}
+
+
 /* Optional: captions inside slideshow */
 .modal .caption {
   color: white;
