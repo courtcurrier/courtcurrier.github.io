@@ -221,6 +221,29 @@ details p {
   line-height: 1.6;
 }
 
+/* Video wrapper */
+.hero-video-wrapper {
+  width: 100%;
+  max-width: 800px;           /* match wrapper width */
+  margin: 1em auto;           /* center horizontally with vertical spacing */
+  margin-top: 3em;            /* add extra space above the video */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  position: relative;
+  padding-top: 56.25%;        /* 16:9 aspect ratio */
+}
+
+.hero-video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 10px;
+}
+
 /* ===========================
    Publications page
 =========================== */
@@ -252,28 +275,6 @@ details p {
 /* ===========================
    Art page
 =========================== */
-
-/* Video wrapper */
-.hero-video-wrapper {
-  width: 100%;
-  max-width: 800px;           /* match wrapper width */
-  margin: 1em auto;           /* center horizontally with vertical spacing */
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  position: relative;
-  padding-top: 56.25%;        /* 16:9 aspect ratio */
-}
-
-.hero-video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  border-radius: 10px;
-}
 
 /* Stacked art images */
 .art-gallery,
