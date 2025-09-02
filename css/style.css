@@ -438,8 +438,7 @@ details p {
   position: absolute;
   width: 16px;
   height: 16px;
-  background-color: #6691b0;
-  opacity: 0.7;
+  background-color: rgba(50,50,50,0.7); /* dark gray with transparency */
   border-radius: 50%;
   cursor: pointer;
   transform: translate(-50%, -50%);
@@ -450,6 +449,7 @@ details p {
   transform: translate(-50%, -50%) scale(1.2);
   opacity: 1;
 }
+
 
 /* Slideshow modal */
 .modal {
