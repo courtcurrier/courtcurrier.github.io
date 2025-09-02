@@ -220,10 +220,12 @@ details {
 }
 
 summary {
-  font-style: italic; 
+  font-style: italic;   /* make italic */
+  font-weight: normal;  /* remove bold */
   cursor: pointer;
-  list-style: none;   /* removes default marker */
+  list-style: none;     /* removes default marker */
 }
+
 
 summary::marker {
   display: none;      /* hides default marker in some browsers */
