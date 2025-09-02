@@ -106,31 +106,6 @@ main {
 }
 
 /* ===========================
-   Art page Vimeo video
-=========================== */
-
-.hero-video-wrapper {
-  width: 100%;
-  max-width: 800px;
-  margin: 1em auto;          /* smaller top margin to reduce space above video */
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  position: relative;
-  padding-top: 56.25%;       /* 16:9 aspect ratio */
-}
-
-.hero-video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  border-radius: 10px;
-}
-
-/* ===========================
    About page
 =========================== */
 
@@ -274,3 +249,35 @@ details p {
   margin: 0 auto;    /* center the image */
 }
 
+/* ===========================
+   Art page Vimeo video
+=========================== */
+
+.hero-video-wrapper {
+  width: 100%;
+  max-width: 800px;
+  margin: 1em auto;          /* smaller top margin to reduce space above video */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  position: relative;
+  padding-top: 56.25%;       /* 16:9 aspect ratio */
+}
+
+.hero-video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 10px;
+}
+
+.art-gallery img {
+  width: 100%;        /* make images match wrapper width */
+  max-width: 900px;   /* optional: keep them from getting too wide */
+  height: auto;
+  display: block;
+  margin: 2em auto;   /* space between stacked images */
+}
