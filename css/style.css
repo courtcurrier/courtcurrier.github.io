@@ -416,7 +416,7 @@ details p {
 }
 
 .map-wrapper {
-  margin-top: 0.5rem;    /* reduce space above the map */
+  margin-top: 0rem;    /* reduce space above the map */
 }
 
 
