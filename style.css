@@ -231,3 +231,17 @@ main {
   margin: 0 auto;
   line-height: 1.6;
 }
+
+.pub-photo {
+  text-align: center;
+  margin: 2em 0;  /* space above and below */
+}
+
+.pub-photo img {
+  width: 100%;       /* fill container width */
+  max-width: 600px;  /* smaller than wrapper */
+  height: auto;      /* maintain aspect ratio */
+  display: block;
+  margin: 0 auto;    /* center the image */
+}
+
