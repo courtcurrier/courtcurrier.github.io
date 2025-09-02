@@ -12,11 +12,11 @@ body {
 
 /* Wrapper for single-column layout */
 .wrapper {
-  max-width: 1000px;        /* width of your content column */
+  max-width: 1000px;
   width: 100%;
-  padding: 2em;
+  padding: 0;               /* remove horizontal padding to align header line */
+  margin: 0 auto;
   box-sizing: border-box;
-  margin: 0 auto;           /* centers content */
 }
 
 a:not(nav a) {  /* any <a> not inside nav */
@@ -31,25 +31,24 @@ a:not(nav a):hover {
 /* ===========================
    Header & Navigation
 =========================== */
-
 header {
   text-align: center;
   background: #ffffff;
-  padding: 0;                 /* remove extra space */
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-bottom: none;        /* line handled by .header-wrapper */
+  border-bottom: none;   /* gray line handled by header-wrapper */
 }
 
 .header-wrapper {
   max-width: 1000px;
   width: 100%;
   margin: 0 auto;
-  border-bottom: 1px solid #ddd; /* gray line */
+  border-bottom: 1px solid #ddd;  /* gray line under nav */
   text-align: center;
-  padding: 0.25em 0;            /* small space above/below line */
+  padding: 0.25em 0;       /* small space above/below line */
 }
 
 .header-wrapper h1 {
@@ -59,7 +58,7 @@ header {
 }
 
 .header-wrapper nav {
-  margin-top: 0.2em;           /* snug under title */
+  margin-top: 0.2em;      /* snug under title */
 }
 
 nav a {
@@ -74,22 +73,17 @@ nav a:hover {
 }
 
 nav a.active {
-  color: #5ea1db;               /* highlight active page */
-}
-
-main {
-  text-align: left;
-  line-height: 1.6;
-  margin-top: 0.25em;          /* small gap below gray line */
+  color: #5ea1db;
 }
 
 /* ===========================
    Main content
 =========================== */
 main {
+  padding: 0 2em 2em 2em;  /* top 0 to hug gray line, left/right match header, bottom spacing */
   text-align: left;
   line-height: 1.6;
-  margin-top: 0;               /* same spacing below header on all pages */
+  margin: 0;
 }
 
 /* ===========================
@@ -98,12 +92,12 @@ main {
 .hero-video-wrapper {
   width: 100%;
   max-width: 1000px;
-  margin: 2em auto;
+  margin: 1em auto;          /* smaller top margin to reduce space above video */
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   position: relative;
-  padding-top: 56.25%;         /* 16:9 aspect ratio */
+  padding-top: 56.25%;       /* 16:9 aspect ratio */
 }
 
 .hero-video-wrapper iframe {
@@ -117,9 +111,8 @@ main {
 }
 
 /* ===========================
-   About page 
+   About page
 =========================== */
-
 .about-photo {
   text-align: center;
   margin: 2em 0;
@@ -127,7 +120,7 @@ main {
 
 .about-photo img {
   width: 100%;
-  max-width: 1000px;  /* same as .wrapper */
+  max-width: 1000px;         /* match wrapper width */
   height: auto;
   display: block;
   margin: 0 auto;
@@ -136,19 +129,17 @@ main {
 /* Two-column layout under About photo */
 .about-columns {
   display: flex;
-  justify-content: space-between;  /* spread left and right columns across full width */
-  gap: 2em;                        /* small gap between columns */
-  margin: 2em 0;
-  flex-wrap: wrap;                  /* stacks on small screens */
-  max-width: 1000px;                /* match photo width */
-  margin-left: auto;
-  margin-right: auto;
+  justify-content: space-between;  /* spread columns across photo width */
+  gap: 2em;
+  flex-wrap: wrap;
+  max-width: 1000px;              /* match photo and wrapper width */
+  margin: 0 auto 2em auto;
 }
 
 /* Left column wider */
 .about-left {
-  flex: 2 1 0;          /* twice the width of right column */
-  min-width: 0;         /* allows shrinking */
+  flex: 2 1 0;
+  min-width: 0;
 }
 
 /* Right column narrower */
@@ -178,13 +169,12 @@ main {
   text-decoration: underline;
 }
 
-
 /* ===========================
    Publications page
 =========================== */
 .pub-links {
   text-align: center;
-  margin-bottom: 2em;
+  margin-bottom: 1.5em;      /* slightly smaller spacing before list */
 }
 
 .pub-list {
