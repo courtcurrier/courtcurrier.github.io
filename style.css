@@ -48,7 +48,7 @@ header {
   margin: 0 auto;
   border-bottom: 1px solid #ddd; /* gray line */
   text-align: center;
-  padding: 0.5em 0;            /* space above/below line */
+  padding: 0.15em 0;            /* space above/below line */
 }
 
 .header-wrapper h1 {
