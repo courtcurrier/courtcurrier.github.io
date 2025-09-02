@@ -489,13 +489,6 @@ details p {
   align-items: center;
 }
 
-.slideshow-content img {
-  max-width: 100%;
-  max-height: 80%;
-  display: block;
-  margin: 0 auto;
-}
-
 .slideshow-content .caption {
   color: #fff;
   text-align: center;
@@ -503,7 +496,13 @@ details p {
   font-size: 1em;
 }
 
-
+.slideshow-content img {
+  max-width: 100%;       /* scale down if too wide */
+  max-height: 70vh;      /* restrict height to 70% of viewport */
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;    /* maintain aspect ratio, no cropping */
+}
 
 .prev,
 .next {
