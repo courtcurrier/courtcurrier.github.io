@@ -159,10 +159,11 @@ main {
   min-width: 0;
 }
 
-/* Right column: stretches to fill remaining space */
+/* Right column: natural width, text left-aligned */
 .about-right {
-  flex: 1 1 0;                  /* fills remaining space */
+  flex: 0 0 auto;       /* don’t grow, don’t shrink */
   min-width: 0;
+  text-align: left;     /* ensure text is left-aligned */
 }
 
 /* Headings */
