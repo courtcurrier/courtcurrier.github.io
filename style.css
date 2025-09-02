@@ -165,7 +165,6 @@ main {
   min-width: 0;
 }
 
-
 /* Headings */
 .about-left h2,
 .about-right h2 {
@@ -185,6 +184,18 @@ main {
 
 .about-right a:hover {
   text-decoration: underline;
+}
+
+/*============================
+   Research page
+============================*/
+
+/* Headings on research page */
+.research h2 {
+  margin-top: 0;
+  font-size: 1em;       /* same as About page */
+  font-weight: bold;
+  margin-bottom: 0.5em; /* same spacing as About page */
 }
 
 /* ===========================
