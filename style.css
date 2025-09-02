@@ -31,6 +31,7 @@ a:not(nav a):hover {
 /* ===========================
    Header & Navigation
 =========================== */
+
 header {
   text-align: center;
   background: #ffffff;
@@ -48,7 +49,7 @@ header {
   margin: 0 auto;
   border-bottom: 1px solid #ddd; /* gray line */
   text-align: center;
-  padding: 0.15em 0;            /* space above/below line */
+  padding: 0.25em 0;            /* small space above/below line */
 }
 
 .header-wrapper h1 {
@@ -73,7 +74,13 @@ nav a:hover {
 }
 
 nav a.active {
-  color: #5ea1db;
+  color: #5ea1db;               /* highlight active page */
+}
+
+main {
+  text-align: left;
+  line-height: 1.6;
+  margin-top: 0.25em;          /* small gap below gray line */
 }
 
 /* ===========================
