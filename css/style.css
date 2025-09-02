@@ -502,3 +502,8 @@ details p {
 .prev { left: 10px; }
 .next { right: 10px; }
 
+html {
+  overflow-y: scroll; /* always reserve scrollbar space */
+}
+
+
