@@ -116,54 +116,37 @@ main {
 
 .about-photo img {
   width: 100%;
-  max-width: 800px;         /* match wrapper width */
+  max-width: 800px;   /* match wrapper width */
   height: auto;
   display: block;
   margin: 0 auto;
 }
 
-.about-columns {
-  display: flex;
-  justify-content: flex-start;   /* keep items left-aligned */
-  gap: 2em;                      /* space between left and right columns */
-  flex-wrap: wrap;
-  max-width: 800px;              /* match wrapper/photo width */
+/* About info section (stacked content) */
+.about-info {
+  max-width: 800px;
   margin: 0 auto 2em auto;
+  line-height: 1.6;
 }
 
-/* Left column: keep natural width for text */
-.about-left {
-  flex: 2 1 auto;               /* takes as much space as content, can shrink */
-  min-width: 0;
-}
-
-/* Right column: natural width, text left-aligned */
-.about-right {
-  flex: 0 0 auto;       /* don’t grow, don’t shrink */
-  min-width: 0;
-  text-align: left;     /* ensure text is left-aligned */
-}
-
-/* Headings */
-.about-left h2,
-.about-right h2 {
+/* Headings in about-info */
+.about-info h2 {
   margin-top: 0;
-  font-size: 1em;
+  font-size: 1em;       /* smaller than before */
   font-weight: bold;
   margin-bottom: 0.5em;
 }
 
-/* Links in right column */
-.about-right a {
-  display: inline-block;
-  margin-right: 10px;
+/* Links in about-info */
+.about-info a {
   color: #6691b0;
   text-decoration: none;
 }
 
-.about-right a:hover {
+.about-info a:hover {
   text-decoration: underline;
 }
+
 
 /*============================
    Research page
