@@ -204,16 +204,17 @@ main {
 
 .research-photo {
   text-align: center;
-  margin: 2em 0; /* spacing above and below the image */
+  margin: 2em 0; /* space above and below */
 }
 
 .research-photo img {
-  width: 100%;
-  max-width: 900px; /* matches wrapper width */
-  height: auto;
+  width: 100%;       /* fill container width */
+  max-width: 900px;  /* never exceed wrapper width */
+  height: auto;      /* maintain aspect ratio */
   display: block;
-  margin: 0 auto;
+  margin: 0 auto;    /* center the image */
 }
+
 
 
 /* ===========================
