@@ -31,6 +31,7 @@ a:not(nav a):hover {
 /* ===========================
    Header & Navigation
 =========================== */
+
 header {
   text-align: center;
   background: #ffffff;
@@ -105,8 +106,9 @@ main {
 }
 
 /* ===========================
-   Home page Vimeo video
+   Art page Vimeo video
 =========================== */
+
 .hero-video-wrapper {
   width: 100%;
   max-width: 900px;
@@ -131,6 +133,7 @@ main {
 /* ===========================
    About page
 =========================== */
+
 .about-photo {
   text-align: center;
   margin: 2em 0;
