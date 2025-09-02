@@ -278,7 +278,7 @@ details p {
    Art page images
 =========================== */
 .art-gallery img {
-  width: 70%;          /* images take 70% of wrapper width */
+  width: 100%;          /* images take 70% of wrapper width */
   max-width: 800px;    /* never wider than 800px */
   height: auto;        /* keep aspect ratio */
   display: block;      
