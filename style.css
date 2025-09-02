@@ -34,21 +34,21 @@ a:not(nav a):hover {
 header {
   text-align: center;
   background: #ffffff;
-  padding: 1em 0;          /* space inside header */
+  padding: 1em 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 120px;       /* keeps header tall enough */
-  /* no border-bottom here */
+  border-bottom: none;     /* REMOVE this if it exists */
 }
 
 .header-wrapper {
-  max-width: 800px;        /* same as .wrapper */
+  max-width: 800px;        /* matches your content width */
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  border-bottom: 1px solid #ddd;  /* single gray line under nav */
+  border-bottom: 1px solid #ddd;  /* only one line now */
   padding-bottom: 0.5em;          /* space between nav and line */
 }
 
