@@ -12,7 +12,7 @@ body {
 
 /* Wrapper for single-column layout */
 .wrapper {
-  max-width: 900px;
+  max-width: 800px;
   width: 100%;
   padding: 0;               /* remove horizontal padding to align header line */
   margin: 0 auto;
@@ -44,7 +44,7 @@ header {
 }
 
 .header-wrapper {
-  max-width: 900px;        /* matches wrapper width */
+  max-width: 800px;        /* matches wrapper width */
   margin: 0 auto;            
   text-align: center;
   padding-top: 0.5em;       /* space above the line */
@@ -55,7 +55,7 @@ header {
   content: "";               
   display: block;
   width: 90%;               /* line is 80% of wrapper width */
-  max-width: 900px;         /* optional max width */
+  max-width: 800px;         /* optional max width */
   height: 1px;
   background-color: #ddd;
   margin: 1em auto 1em auto; /* 1em space above and below line (like a normal <p>) */
@@ -111,7 +111,7 @@ main {
 
 .hero-video-wrapper {
   width: 100%;
-  max-width: 900px;
+  max-width: 800px;
   margin: 1em auto;          /* smaller top margin to reduce space above video */
   border-radius: 10px;
   overflow: hidden;
@@ -141,7 +141,7 @@ main {
 
 .about-photo img {
   width: 100%;
-  max-width: 900px;         /* match wrapper width */
+  max-width: 800px;         /* match wrapper width */
   height: auto;
   display: block;
   margin: 0 auto;
@@ -152,7 +152,7 @@ main {
   justify-content: flex-start;   /* keep items left-aligned */
   gap: 2em;                      /* space between left and right columns */
   flex-wrap: wrap;
-  max-width: 900px;              /* match wrapper/photo width */
+  max-width: 800px;              /* match wrapper/photo width */
   margin: 0 auto 2em auto;
 }
 
@@ -209,7 +209,7 @@ main {
 
 .research-photo img {
   width: 100%;       /* fill container width */
-  max-width: 900px;  /* never exceed wrapper width */
+  max-width: 800px;  /* never exceed wrapper width */
   height: auto;      /* maintain aspect ratio */
   display: block;
   margin: 0 auto;    /* center the image */
@@ -256,7 +256,7 @@ details p {
 
 .pub-list {
   text-align: left;
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
 }
