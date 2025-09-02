@@ -480,14 +480,20 @@ details p {
   max-width: 90%;
   max-height: 80%;
   margin: 5% auto;
+  flex-direction: column; /* make everything stack vertically */
 }
 
+.slide-wrapper {
+  display: flex;
+  flex-direction: column; /* stack image and caption vertically */
+  align-items: center;
+}
 
 .slideshow-content img {
   max-width: 100%;
   max-height: 80%;
   display: block;
-  margin: 0 auto; /* centers the image */
+  margin: 0 auto;
 }
 
 .slideshow-content .caption {
@@ -496,6 +502,7 @@ details p {
   margin-top: 0.5em;   /* space between image and caption */
   font-size: 1em;
 }
+
 
 
 .prev,
