@@ -162,7 +162,7 @@ main {
 .about-right a {
   display: inline-block;
   margin-right: 10px;
-  color: green;
+  color: gray;
   text-decoration: none;
 }
 
