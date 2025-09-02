@@ -400,10 +400,11 @@ details p {
   margin-bottom: 0.5em;
 }
 
+/* Wrapper for map */
 .map-wrapper {
   position: relative;
   max-width: 800px;
-  margin: 2em auto;
+  margin: 0 auto;
 }
 
 .map-wrapper img {
@@ -413,33 +414,35 @@ details p {
   border-radius: 10px;
 }
 
-/* Fieldwork page tweaks */
+/* Fieldwork page spacing */
 .fieldwork {
-  margin-top: 0;         /* kill top margin */
-  padding-top: 0;        /* kill top padding */
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .fieldwork p,
 .fieldwork {
-  margin-bottom: 1rem;   /* keep a little breathing room */
+  margin-bottom: 1rem;
 }
 
-.map-wrapper {
-  margin-top: 0rem;    /* reduce space above the map */
+.fieldwork .intro {
+  margin-bottom: 0;
 }
 
+.map-wrapper.flush {
+  margin-top: 0;
+}
 
-/* clickable markers */
-
+/* Clickable markers */
 .marker {
   position: absolute;
-  width: 16px;      /* smaller size */
+  width: 16px;
   height: 16px;
   background-color: #6691b0;
   opacity: 0.7;
   border-radius: 50%;
   cursor: pointer;
-  transform: translate(-50%, -50%); /* center over coordinates */
+  transform: translate(-50%, -50%);
   transition: transform 0.2s, opacity 0.2s;
 }
 
@@ -448,8 +451,7 @@ details p {
   opacity: 1;
 }
 
-
-/* slideshow modal */
+/* Slideshow modal */
 .modal {
   display: none;
   position: fixed;
@@ -486,7 +488,8 @@ details p {
   display: block;
 }
 
-.prev, .next {
+.prev,
+.next {
   position: absolute;
   top: 50%;
   color: #fff;
@@ -502,16 +505,9 @@ details p {
 .prev { left: 10px; }
 .next { right: 10px; }
 
+/* Scrollbar tweak */
 html {
-  overflow-y: scroll; /* always reserve scrollbar space */
-}
-
-.fieldwork .intro {
-  margin-bottom: 0;
-}
-
-.map-wrapper.flush {
-  margin-top: 0;
+  overflow-y: scroll;
 }
 
 
