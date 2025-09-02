@@ -41,11 +41,12 @@ header {
 }
 
 .header-wrapper {
-  max-width: 1000px;
-  margin: 0 auto;
-  border-bottom: 1px solid #ddd; /* gray line under nav */
+  max-width: 800px;
+  margin: 0 auto;                 /* centers the wrapper */
+  border-bottom: 1px solid #ddd;  /* gray line */
   text-align: center;
-  padding-bottom: 0.5em; /* controls space below line */
+  padding-top: 0.5em;             /* space above the line */
+  padding-bottom: 0.5em;          /* space below the line */
 }
 
 .header-wrapper h1 {
