@@ -146,22 +146,22 @@ main {
 
 .about-columns {
   display: flex;
-  justify-content: flex-start; /* don’t spread them out */
-  gap: 10em;                    /* still keep spacing */
+  justify-content: space-between;  /* left and right stick to edges */
+  align-items: flex-start;
   flex-wrap: wrap;
   max-width: 900px;
   margin: 0 auto 2em auto;
 }
 
 .about-left {
-  flex: 2 1 0;
-  min-width: 0;
+  flex: 0 1 auto;   /* let it shrink/wrap naturally */
+  min-width: 0;     /* prevents weird flex overflow */
 }
 
 .about-right {
-  flex: 1 1 0;
-  min-width: 0;
-  margin-left: auto;   /* this pushes it all the way right */
+  flex: 0 0 auto;   /* don’t let it shrink/stretch */
+  min-width: 200px; /* optional: fix a nice width for the right column */
+  text-align: right;/* makes links/headings align neatly */
 }
 
 /* Headings */
