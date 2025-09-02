@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fieldwork</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="header-wrapper">
+        <h1>COURTNEY M. CURRIER</h1>
+        <p class="tagline">where the fieldwork happens!</p>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/research.html">Research</a>
+          <a href="/publications.html">Publications</a>
+          <a href="/art.html">Art</a>
+          <a href="/about.html">About</a>
+          <a href="/fieldwork.html" class="active">Fieldwork</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrapper fieldwork">
+      <div class="map-container">
+        <img src="map.png" alt="Field sites map" class="map-image">
+
+        <!-- clickable pins -->
+        <div class="map-pin" data-location="site1" style="top: 40%; left: 60%;"></div>
+        <div class="map-pin" data-location="site2" style="top: 70%; left: 20%;"></div>
+        <!-- add more pins -->
+      </div>
+    </main>
+
+    <!-- Modal for slideshow -->
+    <div id="slideshow-modal" class="modal">
+      <span class="close">&times;</span>
+      <div class="slideshow-content">
+        <img id="slideshow-img" src="" alt="Field photo">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="fieldwork.js"></script>
+</body>
+</html>
 
