@@ -482,11 +482,21 @@ details p {
   margin: 5% auto;
 }
 
+
 .slideshow-content img {
   max-width: 100%;
-  max-height: 100%;
+  max-height: 80%;
   display: block;
+  margin: 0 auto; /* centers the image */
 }
+
+.slideshow-content .caption {
+  color: #fff;
+  text-align: center;
+  margin-top: 0.5em;   /* space between image and caption */
+  font-size: 1em;
+}
+
 
 .prev,
 .next {
