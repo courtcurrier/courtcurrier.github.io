@@ -215,7 +215,34 @@ main {
   margin: 0 auto;    /* center the image */
 }
 
+details {
+  margin-bottom: 1em;
+}
 
+summary {
+  font-weight: bold;
+  cursor: pointer;
+  list-style: none;   /* removes default marker */
+}
+
+summary::marker {
+  display: none;      /* hides default marker in some browsers */
+}
+
+summary::after {
+  content: " ▼";       /* arrow down when closed */
+  font-weight: normal;
+  margin-left: 0.3em;
+}
+
+details[open] summary::after {
+  content: " ▲";       /* arrow up when open */
+}
+
+details p {
+  margin: 0.5em 1em;   /* spacing inside expanded section */
+  line-height: 1.6;
+}
 
 /* ===========================
    Publications page
