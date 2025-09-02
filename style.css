@@ -33,17 +33,17 @@ a:not(nav a):hover {
 =========================== */
 
 header {
-  width: 100%;                /* full width of viewport */
   text-align: center;
   background: #ffffff;
   padding: 1em 0;
-  border-bottom: 1px solid #ddd;  /* gray line spans entire page */
+  border-bottom: 1px solid #ddd;  /* short gray line matches wrapper width */
+  width: 100%;  /* 100% of wrapper */
   box-sizing: border-box;
-  min-height: 120px;          /* keeps consistent height with home page */
+  min-height: 120px;  /* keeps header tall enough on pages without a tagline */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center;  /* vertical centering */
 }
 
 
