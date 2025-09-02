@@ -242,7 +242,7 @@ details p {
 }
 
 .pub-photo img {
-  width: 50%;       /* fill container width */
+  width: 60%;       /* fill container width */
   max-width: 600px;  /* smaller than wrapper */
   height: auto;      /* maintain aspect ratio */
   display: block;
