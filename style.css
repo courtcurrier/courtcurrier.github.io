@@ -20,7 +20,7 @@ body {
 }
 
 a:not(nav a) {  /* any <a> not inside nav */
-  color: #c23c3e;
+  color: #6691b0;
   text-decoration: none;
 }
 
@@ -91,7 +91,7 @@ nav a:hover {
 }
 
 nav a.active {
-  color: #c23c3e;
+  color: #6691b0;
 }
 
 /* ===========================
@@ -182,7 +182,7 @@ main {
 .about-right a {
   display: inline-block;
   margin-right: 10px;
-  color: #c23c3e;
+  color: #6691b0;
   text-decoration: none;
 }
 
