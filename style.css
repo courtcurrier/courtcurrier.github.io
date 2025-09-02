@@ -65,18 +65,18 @@ header {
   margin: 0;
   font-size: 2em;
   line-height: 1.2;
-}
-
-.header-wrapper nav {
-  margin-top: 0.25em;      /* snug under title */
+  margin-bottom: 0.75em;   /* add space below name */
 }
 
 .tagline {
   font-style: italic;
-  color: #666;          /* medium gray */
-  margin-top: 0.5em;    /* more space below name */
-  margin-bottom: 0.5em;/* more space before nav */
+  color: #666;
+  margin: 0 0 1em 0;       /* remove top margin, add more below */
   font-size: 1em;
+}
+
+.header-wrapper nav {
+  margin-top: 1em;         /* extra space between tagline and links */
 }
 
 nav a {
