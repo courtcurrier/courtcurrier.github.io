@@ -144,27 +144,24 @@ main {
   margin: 0 auto;
 }
 
-/* Two-column layout under About photo */
 .about-columns {
   display: flex;
-  justify-content: space-between;  /* spread columns across photo width */
-  gap: 2em;
+  justify-content: flex-start; /* don’t spread them out */
+  gap: 2em;                    /* still keep spacing */
   flex-wrap: wrap;
-  max-width: 900px;              /* match photo and wrapper width */
+  max-width: 900px;
   margin: 0 auto 2em auto;
 }
 
-/* Left column wider */
 .about-left {
   flex: 2 1 0;
   min-width: 0;
 }
 
-/* Right column narrower */
 .about-right {
   flex: 1 1 0;
   min-width: 0;
-  margin-left: auto;   /* pushes it all the way to the right */
+  margin-left: auto;   /* this pushes it all the way right */
 }
 
 /* Headings */
