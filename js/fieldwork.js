@@ -13,12 +13,12 @@ const siteImages = {
     { src: "images/fieldwork/knp_6.jpg", caption: "Kruger National Park, South Africa" }
   ],
   "Florida": [
-    { src: "images/fieldwork/abs_1.jpg", caption: "Archbold Biological Station, FL, USA" },
-    { src: "images/fieldwork/abs_2.jpg", caption: "Archbold Biological Station, FL, USA" }, 
-    { src: "images/fieldwork/abs_3.jpg", caption: "Archbold Biological Station, FL, USA" },
-    { src: "images/fieldwork/abs_4.jpg", caption: "Archbold Biological Station, FL, USA" },
-    { src: "images/fieldwork/abs_5.jpg", caption: "Archbold Biological Station, FL, USA" },
-    { src: "images/fieldwork/abs_6.jpg", caption: "Archbold Biological Station, FL, USA" }
+    { src: "images/fieldwork/abs_1.JPG", caption: "Archbold Biological Station, FL, USA" },
+    { src: "images/fieldwork/abs_2.JPG", caption: "Archbold Biological Station, FL, USA" }, 
+    { src: "images/fieldwork/abs_3.JPG", caption: "Archbold Biological Station, FL, USA" },
+    { src: "images/fieldwork/abs_4.JPG", caption: "Archbold Biological Station, FL, USA" },
+    { src: "images/fieldwork/abs_5.JPG", caption: "Archbold Biological Station, FL, USA" },
+    { src: "images/fieldwork/abs_6.JPG", caption: "Archbold Biological Station, FL, USA" }
   ],
   "New Mexico": [
     { src: "images/fieldwork/jrn_1.jpg", caption: "Jornada LTER, NM, USA" },
