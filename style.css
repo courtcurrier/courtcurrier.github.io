@@ -20,33 +20,31 @@ body {
 }
 
 /* ===========================
-   Header and navigation
+   Header & Navigation
 =========================== */
-
-/* Header and navigation - consistent on all pages */
 header {
-  text-align: center;
-  background: #ffffff;
-  padding: 1em 0;          /* same as home page */
-  border-bottom: 1px solid #ddd;
-  width: 100%;
-  margin: 0;                /* remove any extra spacing */
+  text-align: center;          /* center the content */
+  background: #ffffff;         /* white background */
+  padding: 1em 0;              /* same as home page */
+  border-bottom: 1px solid #ddd; /* gray line under nav */
+  width: 100%;                 /* full width */
+  margin: 0;                   /* remove extra spacing */
 }
 
 h1 {
-  margin: 0;                /* removes extra top/bottom margin */
-  font-size: 2em;
+  margin: 0;                   /* no top/bottom margin */
+  font-size: 2em;              /* consistent size */
+  line-height: 1.2;            /* optional: tighter spacing */
 }
 
 .tagline {
   font-style: italic;
   color: #555;
-  margin: 0.2em 0 1em 0;
-  display: block;             /* tagline on new line */
+  margin: 0.2em 0 1em 0;       /* consistent spacing below h1 */
 }
 
 nav {
-  margin-top: 0.5em;
+  margin-top: 0.5em;           /* spacing between tagline and nav */
 }
 
 nav a {
@@ -61,8 +59,9 @@ nav a:hover {
 }
 
 nav a.active {
-  color: #5ea1db;             /* consistent highlight color */
+  color: #5ea1db;             /* highlight active page */
 }
+
 
 /* ===========================
    Main content
