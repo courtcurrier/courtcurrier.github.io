@@ -19,6 +19,15 @@ body {
   margin: 0 auto;          /* centers content */
 }
 
+a:not(nav a) {  /* any <a> not inside nav */
+  color: gray;
+  text-decoration: none;
+}
+
+a:not(nav a):hover {
+  text-decoration: underline;
+}
+
 /* ===========================
    Header & Navigation
 =========================== */
