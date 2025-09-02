@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fieldwork</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-wrapper">
+    <h1>COURTNEY M. CURRIER</h1>
+    <p class="tagline">how do grassy ecosystems adapt to a changing world?</p>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/research.html">Research</a>
+      <a href="/publications.html">Publications</a>
+      <a href="/art.html">Paintings</a>
+      <a href="/about.html">About</a>
+      <a href="/fieldwork.html" class="active">Fieldwork</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrapper fieldwork">
+
+  <h2>Fieldwork Locations</h2>
+  <p>Click on a location to see photos from that site.</p>
+
+  <div class="map-wrapper">
+    <img src="images/maps/fieldwork_map.jpg" alt="Fieldwork map" id="field-map">
+    <!-- clickable markers -->
+    <div class="marker" data-location="location1" style="top: 30%; left: 45%;"></div>
+    <div class="marker" data-location="location2" style="top: 60%; left: 70%;"></div>
+    <!-- Add more markers here -->
+  </div>
+
+  <!-- Slideshow Modal -->
+  <div id="slideshow-modal" class="modal">
+    <span class="close">&times;</span>
+    <div class="slideshow-content" id="slideshow-content">
+      <!-- images will be injected via JS -->
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+
+</main>
+
+<script src="js/fieldwork.js"></script>
+</body>
+</html>
