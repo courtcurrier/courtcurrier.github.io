@@ -275,8 +275,8 @@ details p {
 }
 
 .art-gallery img {
-  width: 100%;        /* make images match wrapper width */
-  max-width: 900px;   /* optional: keep them from getting too wide */
+  width: 70%;        /* make images match wrapper width */
+  max-width: 800px;   /* optional: keep them from getting too wide */
   height: auto;
   display: block;
   margin: 2em auto;   /* space between stacked images */
