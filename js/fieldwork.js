@@ -5,28 +5,52 @@
 // Map site names to arrays of photo objects {src, caption}
 const siteImages = {
   "South Africa": [
-    { src: "images/fieldwork/knp_1.jpg", caption: "Savanna research plot in South Africa" },
-    { src: "images/fieldwork/knp_2.jpg", caption: "Measuring soil carbon stocks" }
+    { src: "images/fieldwork/knp_1.jpg", caption: "Kruger National Park, South Africa" },
+    { src: "images/fieldwork/knp_2.jpg", caption: "Kruger National Park, South Africa" },
+    { src: "images/fieldwork/knp_3.jpg", caption: "Kruger National Park, South Africa" },
+    { src: "images/fieldwork/knp_4.jpg", caption: "Kruger National Park, South Africa" },
+    { src: "images/fieldwork/knp_5.jpg", caption: "Kruger National Park, South Africa" },
+    { src: "images/fieldwork/knp_6.jpg", caption: "Kruger National Park, South Africa" }
   ],
   "Florida": [
-    { src: "images/fieldwork/abs_1.jpg", caption: "Prescribed burn in Florida flatwoods" },
-    { src: "images/fieldwork/abs_2.jpg", caption: "Long-term vegetation monitoring" }
+    { src: "images/fieldwork/abs_1.jpg", caption: "Archbold Biological Station, FL, USA" },
+    { src: "images/fieldwork/abs_2.jpg", caption: "Archbold Biological Station, FL, USA" }, 
+    { src: "images/fieldwork/abs_3.jpg", caption: "Archbold Biological Station, FL, USA" },
+    { src: "images/fieldwork/abs_4.jpg", caption: "Archbold Biological Station, FL, USA" },
+    { src: "images/fieldwork/abs_5.jpg", caption: "Archbold Biological Station, FL, USA" },
+    { src: "images/fieldwork/abs_6.jpg", caption: "Archbold Biological Station, FL, USA" }
   ],
   "New Mexico": [
-    { src: "images/fieldwork/jrn_1.jpg", caption: "Desert grassland site, New Mexico" },
-    { src: "images/fieldwork/jrn_2.jpg", caption: "Soil sampling in arid ecosystems" }
+    { src: "images/fieldwork/jrn_1.jpg", caption: "Jornada LTER, NM, USA" },
+    { src: "images/fieldwork/jrn_2.jpg", caption: "Jornada LTER, NM, USA" }, 
+    { src: "images/fieldwork/jrn_3.jpg", caption: "Jornada LTER, NM, USA" },
+    { src: "images/fieldwork/jrn_4.jpg", caption: "Jornada LTER, NM, USA" },
+    { src: "images/fieldwork/jrn_5.jpg", caption: "Jornada LTER, NM, USA" },
+    { src: "images/fieldwork/jrn_6.jpg", caption: "Jornada LTER, NM, USA" }
   ],
   "Minnesota": [
-    { src: "images/fieldwork/cdr_1.jpg", caption: "Prairie plot in Minnesota" },
-    { src: "images/fieldwork/cdr_2.jpg", caption: "Root biomass measurement" }
+    { src: "images/fieldwork/cdr_1.jpg", caption: "Cedar Creek LTER, MN, USA" },
+    { src: "images/fieldwork/cdr_2.jpg", caption: "Cedar Creek LTER, MN, USA" },
+    { src: "images/fieldwork/cdr_3.jpg", caption: "Cedar Creek LTER, MN, USA" },
+    { src: "images/fieldwork/cdr_4.jpg", caption: "Cedar Creek LTER, MN, USA" },
+    { src: "images/fieldwork/cdr_5.jpg", caption: "Cedar Creek LTER, MN, USA" },
+    { src: "images/fieldwork/cdr_6.jpg", caption: "Cedar Creek LTER, MN, USA" }
   ],
   "Colorado": [
-    { src: "images/fieldwork/cper_1.jpg", caption: "High elevation grassland in Colorado" },
-    { src: "images/fieldwork/cper_2.jpg", caption: "Tracking plant recovery after fire" }
+    { src: "images/fieldwork/cper_1.jpg", caption: "Central Plains Experimental Range, CO, USA" },
+    { src: "images/fieldwork/cper_2.jpg", caption: "Central Plains Experimental Range, CO, USA" },
+    { src: "images/fieldwork/cper_3.jpg", caption: "Central Plains Experimental Range, CO, USA" },
+    { src: "images/fieldwork/cper_4.jpg", caption: "Central Plains Experimental Range, CO, USA" },
+    { src: "images/fieldwork/cper_5.jpg", caption: "Central Plains Experimental Range, CO, USA" },
+    { src: "images/fieldwork/cper_6.jpg", caption: "Central Plains Experimental Range, CO, USA" }
   ],
   "Kansas": [
-    { src: "images/fieldwork/kpbs_1.jpg", caption: "Tallgrass prairie, Kansas" },
-    { src: "images/fieldwork/kpbs_2.jpg", caption: "Sampling above- and belowground biomass" }
+    { src: "images/fieldwork/kpbs_1.jpg", caption: "Konza Prairie LTER, KS, USA" },
+    { src: "images/fieldwork/kpbs_2.jpg", caption: "Konza Prairie LTER, KS, USA" },
+    { src: "images/fieldwork/kpbs_3.jpg", caption: "Konza Prairie LTER, KS, USA" },
+    { src: "images/fieldwork/kpbs_4.jpg", caption: "Konza Prairie LTER, KS, USA" },
+    { src: "images/fieldwork/kpbs_5.jpg", caption: "Konza Prairie LTER, KS, USA" },
+    { src: "images/fieldwork/kpbs_6.jpg", caption: "Konza Prairie LTER, KS, USA" }
   ]
 };
 
