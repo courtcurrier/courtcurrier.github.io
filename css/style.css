@@ -404,6 +404,22 @@ details p {
   border-radius: 10px;
 }
 
+/* Fieldwork page tweaks */
+.fieldwork {
+  margin-top: 0;         /* kill top margin */
+  padding-top: 0;        /* kill top padding */
+}
+
+.fieldwork p,
+.fieldwork {
+  margin-bottom: 1rem;   /* keep a little breathing room */
+}
+
+.map-wrapper {
+  margin-top: 0.5rem;    /* reduce space above the map */
+}
+
+
 /* clickable markers */
 .marker {
   position: absolute;
