@@ -71,6 +71,13 @@ header {
   margin-top: 0.25em;      /* snug under title */
 }
 
+.tagline {
+  font-style: italic;
+  color: #666;       /* medium gray */
+  margin: 0.25em 0;  /* light spacing above/below */
+  font-size: 1em;    /* slightly smaller than name */
+}
+
 nav a {
   margin: 0 1em;
   text-decoration: none;
