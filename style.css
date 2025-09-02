@@ -7,7 +7,7 @@ body {
   padding: 0;
   background: #ffffff;
   color: #333;
-  box-sizing: border-box;   /* ensures padding/margin behave consistently */
+  box-sizing: border-box;
 }
 
 /* Wrapper for single-column layout */
@@ -16,7 +16,7 @@ body {
   width: 100%;
   padding: 2em;
   box-sizing: border-box;
-  margin: 0 auto;          /* centers content */
+  margin: 0 auto;           /* centers content */
 }
 
 a:not(nav a) {  /* any <a> not inside nav */
@@ -28,25 +28,27 @@ a:not(nav a):hover {
   text-decoration: underline;
 }
 
+/* ===========================
+   Header & Navigation
+=========================== */
 header {
   text-align: center;
   background: #ffffff;
-  padding: 1em 0;
+  padding: 0;                 /* remove extra space */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 120px; /* ensures consistent height */
-  border-bottom: none; /* line handled by .header-wrapper */
+  border-bottom: none;        /* line handled by .header-wrapper */
 }
 
 .header-wrapper {
-  max-width: 800px;
-  margin: 0 auto;                 /* centers the wrapper */
-  border-bottom: 1px solid #ddd;  /* gray line */
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  border-bottom: 1px solid #ddd; /* gray line */
   text-align: center;
-  padding-top: 0.25em;             /* space above the line */
-  padding-bottom: 0.25em;          /* space below the line */
+  padding: 0.5em 0;            /* space above/below line */
 }
 
 .header-wrapper h1 {
@@ -56,7 +58,7 @@ header {
 }
 
 .header-wrapper nav {
-  margin-top: 0.2em;  /* snug under title */
+  margin-top: 0.2em;           /* snug under title */
 }
 
 nav a {
@@ -74,30 +76,27 @@ nav a.active {
   color: #5ea1db;
 }
 
-
 /* ===========================
    Main content
 =========================== */
-
 main {
   text-align: left;
   line-height: 1.6;
-  margin-top: 0;        /* same spacing below header on all pages */
+  margin-top: 0;               /* same spacing below header on all pages */
 }
 
 /* ===========================
    Home page Vimeo video
 =========================== */
-
 .hero-video-wrapper {
   width: 100%;
-  max-width: 1000px;      /* increase maximum width */
+  max-width: 1000px;
   margin: 2em auto;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   position: relative;
-  padding-top: 56.25%;     /* 16:9 aspect ratio */
+  padding-top: 56.25%;         /* 16:9 aspect ratio */
 }
 
 .hero-video-wrapper iframe {
@@ -113,40 +112,37 @@ main {
 /* ===========================
    About page 
 =========================== */
-
 .about-photo {
   text-align: center;
-  margin: 2em 0;
+  margin: 2em auto 1em auto;    /* space above and below photo */
 }
 
 .about-photo img {
-  width: 100%;
-  max-width: 1000px;  /* same as your .wrapper max-width */
+  width: 100%;                   /* fills wrapper exactly */
   height: auto;
   display: block;
-  margin: 0 auto;
+  max-width: 100%;
 }
-
 
 /* Two-column layout under About photo */
 .about-columns {
   display: flex;
-  justify-content: center;  /* centers the two columns as a group */
-  gap: 3em;                 /* space between left and right columns */
+  justify-content: center;       /* centers the two columns as a group */
+  gap: 3em;                      /* space between left and right columns */
   margin: 2em 0;
-  flex-wrap: wrap;           /* stacks on small screens */
+  flex-wrap: wrap;                /* stacks on small screens */
 }
 
 /* Left column wider */
 .about-left {
-  flex: 2 1 400px;          /* twice the width of the right column */
+  flex: 2 1 400px;               /* twice the width of the right column */
   max-width: 600px;
   text-align: left;
 }
 
 /* Right column narrower */
 .about-right {
-  flex: 1 1 200px;          
+  flex: 1 1 200px;
   max-width: 350px;
   text-align: left;
 }
@@ -155,9 +151,9 @@ main {
 .about-left h2,
 .about-right h2 {
   margin-top: 0;
-  font-size: 1em;       /* make it the same size as normal text */
+  font-size: 1em;               /* same size as normal text */
   font-weight: bold;
-  margin-bottom: 0.5em; /* less spacing below headings */
+  margin-bottom: 0.5em;
 }
 
 /* Links in right column */
@@ -170,4 +166,19 @@ main {
 
 .about-right a:hover {
   text-decoration: underline;
+}
+
+/* ===========================
+   Publications page
+=========================== */
+.pub-links {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.pub-list {
+  text-align: left;
+  max-width: 1000px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
