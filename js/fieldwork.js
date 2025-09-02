@@ -18,12 +18,10 @@ const siteImages = {
     { src: "images/fieldwork/abs_6.JPG", caption: "Archbold Biological Station, FL, USA" }
   ],
   "New Mexico": [
-    { src: "images/fieldwork/jrn_1.jpg", caption: "Jornada LTER, NM, USA" },
     { src: "images/fieldwork/jrn_2.jpg", caption: "Jornada LTER, NM, USA" }, 
     { src: "images/fieldwork/jrn_3.jpg", caption: "Jornada LTER, NM, USA" },
     { src: "images/fieldwork/jrn_4.jpg", caption: "Jornada LTER, NM, USA" },
-    { src: "images/fieldwork/jrn_5.jpg", caption: "Jornada LTER, NM, USA" },
-    { src: "images/fieldwork/jrn_6.jpg", caption: "Jornada LTER, NM, USA" }
+    { src: "images/fieldwork/jrn_5.jpg", caption: "Jornada LTER, NM, USA" }
   ],
   "Minnesota": [
     { src: "images/fieldwork/cdr_1.JPG", caption: "Cedar Creek LTER, MN, USA" },
