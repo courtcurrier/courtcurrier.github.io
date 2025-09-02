@@ -506,4 +506,13 @@ html {
   overflow-y: scroll; /* always reserve scrollbar space */
 }
 
+.fieldwork .intro {
+  margin-bottom: 0;
+}
+
+.map-wrapper.flush {
+  margin-top: 0;
+}
+
+
 
