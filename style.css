@@ -294,4 +294,109 @@ details p {
   margin: 2em auto;           /* stacked with vertical spacing */
 }
 
+/* ===========================
+   Fieldwork page
+=========================== */
+
+/* Main wrapper and text styling inherits from global */
+
+/* Map container */
+.map-container {
+  position: relative;
+  max-width: 800px;        /* match wrapper width */
+  margin: 2em auto;        /* space above and below */
+}
+
+.map-image {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Map pins */
+.map-pin {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #6691b0;   /* same accent as links */
+  border: 2px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+
+.map-pin:hover {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+/* Modal for slideshow */
+.modal {
+  display: none;  /* hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal .slideshow-content {
+  position: relative;
+  margin: 5% auto;
+  max-width: 800px;          /* match wrapper width */
+}
+
+.modal img {
+  width: 100%;               /* fill modal content width */
+  display: block;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 1em;
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
+  user-select: none;
+  background: rgba(0,0,0,0.3);
+  border: none;
+  border-radius: 5px;
+  transform: translateY(-50%);
+}
+
+.prev { left: 0; }
+.next { right: 0; }
+
+/* Optional: captions inside slideshow */
+.modal .caption {
+  color: white;
+  text-align: center;
+  margin-top: 0.5em;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .map-pin { width: 16px; height: 16px; }
+  .prev, .next { font-size: 1.5em; padding: 0.5em; }
+}
 
