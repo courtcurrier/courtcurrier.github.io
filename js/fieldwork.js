@@ -38,8 +38,7 @@ const siteImages = {
     { src: "images/fieldwork/cper_2.jpg", caption: "Central Plains Experimental Range, CO, USA" },
     { src: "images/fieldwork/cper_3.jpeg", caption: "Central Plains Experimental Range, CO, USA" },
     { src: "images/fieldwork/cper_4.JPG", caption: "Central Plains Experimental Range, CO, USA" },
-    { src: "images/fieldwork/cper_6.JPG", caption: "Central Plains Experimental Range, CO, USA" },
-    { src: "images/fieldwork/cper_5.MP4", caption: "Central Plains Experimental Range, CO, USA" }
+    { src: "images/fieldwork/cper_6.JPG", caption: "Central Plains Experimental Range, CO, USA" }
   ],
   "Kansas": [
     { src: "images/fieldwork/kpbs_1.jpg", caption: "Konza Prairie LTER, KS, USA" },
