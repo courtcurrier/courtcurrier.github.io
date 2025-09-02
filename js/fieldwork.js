@@ -5,28 +5,28 @@
 // Map site names to arrays of photo objects {src, caption}
 const siteImages = {
   "South Africa": [
-    { src: "images/fieldwork/south_africa_1.jpg", caption: "Savanna research plot in South Africa" },
-    { src: "images/fieldwork/south_africa_2.jpg", caption: "Measuring soil carbon stocks" }
+    { src: "images/fieldwork/knp_1.jpg", caption: "Savanna research plot in South Africa" },
+    { src: "images/fieldwork/knp_2.jpg", caption: "Measuring soil carbon stocks" }
   ],
   "Florida": [
-    { src: "images/fieldwork/florida_1.jpg", caption: "Prescribed burn in Florida flatwoods" },
-    { src: "images/fieldwork/florida_2.jpg", caption: "Long-term vegetation monitoring" }
+    { src: "images/fieldwork/abs_1.jpg", caption: "Prescribed burn in Florida flatwoods" },
+    { src: "images/fieldwork/abs_2.jpg", caption: "Long-term vegetation monitoring" }
   ],
   "New Mexico": [
-    { src: "images/fieldwork/new_mexico_1.jpg", caption: "Desert grassland site, New Mexico" },
-    { src: "images/fieldwork/new_mexico_2.jpg", caption: "Soil sampling in arid ecosystems" }
+    { src: "images/fieldwork/jrn_1.jpg", caption: "Desert grassland site, New Mexico" },
+    { src: "images/fieldwork/jrn_2.jpg", caption: "Soil sampling in arid ecosystems" }
   ],
   "Minnesota": [
-    { src: "images/fieldwork/minnesota_1.jpg", caption: "Prairie plot in Minnesota" },
-    { src: "images/fieldwork/minnesota_2.jpg", caption: "Root biomass measurement" }
+    { src: "images/fieldwork/cdr_1.jpg", caption: "Prairie plot in Minnesota" },
+    { src: "images/fieldwork/cdr_2.jpg", caption: "Root biomass measurement" }
   ],
   "Colorado": [
-    { src: "images/fieldwork/colorado_1.jpg", caption: "High elevation grassland in Colorado" },
-    { src: "images/fieldwork/colorado_2.jpg", caption: "Tracking plant recovery after fire" }
+    { src: "images/fieldwork/cper_1.jpg", caption: "High elevation grassland in Colorado" },
+    { src: "images/fieldwork/cper_2.jpg", caption: "Tracking plant recovery after fire" }
   ],
   "Kansas": [
-    { src: "images/fieldwork/kansas_1.jpg", caption: "Tallgrass prairie, Kansas" },
-    { src: "images/fieldwork/kansas_2.jpg", caption: "Sampling above- and belowground biomass" }
+    { src: "images/fieldwork/kpbs_1.jpg", caption: "Tallgrass prairie, Kansas" },
+    { src: "images/fieldwork/kpbs_2.jpg", caption: "Sampling above- and belowground biomass" }
   ]
 };
 
