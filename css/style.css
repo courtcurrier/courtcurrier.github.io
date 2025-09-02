@@ -421,16 +421,24 @@ details p {
 
 
 /* clickable markers */
+
 .marker {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: rgba(102, 145, 176, 0.8);
-  border: 2px solid #fff;
+  width: 16px;      /* smaller size */
+  height: 16px;
+  background-color: #6691b0;
+  opacity: 0.7;
   border-radius: 50%;
   cursor: pointer;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* center over coordinates */
+  transition: transform 0.2s, opacity 0.2s;
 }
+
+.marker:hover {
+  transform: translate(-50%, -50%) scale(1.2);
+  opacity: 1;
+}
+
 
 /* slideshow modal */
 .modal {
