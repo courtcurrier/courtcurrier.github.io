@@ -83,6 +83,19 @@ nav a.active {
   color: #5ea1db;             /* highlight active page */
 }
 
+.header-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  border-bottom: 1px solid #ddd; /* gray line under nav */
+  text-align: center;
+}
+.header-wrapper h1 {
+  margin: 0;
+}
+.header-wrapper nav {
+  margin-top: 0.2em; /* snug under title */
+}
+
 
 /* ===========================
    Main content
