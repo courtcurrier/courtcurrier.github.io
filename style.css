@@ -73,9 +73,10 @@ header {
 
 .tagline {
   font-style: italic;
-  color: #666;       /* medium gray */
-  margin: 0.25em 0;  /* light spacing above/below */
-  font-size: 1em;    /* slightly smaller than name */
+  color: #666;          /* medium gray */
+  margin-top: 0.5em;    /* more space below name */
+  margin-bottom: 0.5em;/* more space before nav */
+  font-size: 1em;
 }
 
 nav a {
