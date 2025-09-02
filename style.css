@@ -147,7 +147,7 @@ main {
 .about-columns {
   display: flex;
   justify-content: flex-start; /* don’t spread them out */
-  gap: 2em;                    /* still keep spacing */
+  gap: 4em;                    /* still keep spacing */
   flex-wrap: wrap;
   max-width: 900px;
   margin: 0 auto 2em auto;
