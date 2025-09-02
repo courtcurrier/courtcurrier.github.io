@@ -164,6 +164,7 @@ main {
 .about-right {
   flex: 1 1 0;
   min-width: 0;
+  margin-left: auto;   /* pushes it all the way to the right */
 }
 
 /* Headings */
