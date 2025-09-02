@@ -274,10 +274,14 @@ details p {
   border-radius: 10px;
 }
 
+/* ===========================
+   Art page images
+=========================== */
 .art-gallery img {
-  width: 70%;        /* make images match wrapper width */
-  max-width: 800px;   /* optional: keep them from getting too wide */
-  height: auto;
-  display: block;
-  margin: 2em auto;   /* space between stacked images */
+  width: 70%;          /* images take 70% of wrapper width */
+  max-width: 800px;    /* never wider than 800px */
+  height: auto;        /* keep aspect ratio */
+  display: block;      
+  margin: 2em auto;    /* stacked with space in between and centered */
 }
+
