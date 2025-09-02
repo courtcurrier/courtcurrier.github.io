@@ -146,23 +146,25 @@ main {
 
 .about-columns {
   display: flex;
-  justify-content: space-between;  /* left and right stick to edges */
-  align-items: flex-start;
+  justify-content: flex-start;   /* keep items left-aligned */
+  gap: 2em;                      /* space between left and right columns */
   flex-wrap: wrap;
-  max-width: 900px;
+  max-width: 900px;              /* match wrapper/photo width */
   margin: 0 auto 2em auto;
 }
 
+/* Left column: keep natural width for text */
 .about-left {
-  flex: 0 1 auto;   /* let it shrink/wrap naturally */
-  min-width: 0;     /* prevents weird flex overflow */
+  flex: 2 1 auto;               /* takes as much space as content, can shrink */
+  min-width: 0;
 }
 
+/* Right column: stretches to fill remaining space */
 .about-right {
-  flex: 0 0 auto;   /* don’t let it shrink/stretch */
-  min-width: 200px; /* optional: fix a nice width for the right column */
-  text-align: right;/* makes links/headings align neatly */
+  flex: 1 1 0;                  /* fills remaining space */
+  min-width: 0;
 }
+
 
 /* Headings */
 .about-left h2,
