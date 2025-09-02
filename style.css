@@ -220,7 +220,7 @@ details {
 }
 
 summary {
-  font-weight: bold;
+  font-style: italic; 
   cursor: pointer;
   list-style: none;   /* removes default marker */
 }
