@@ -31,19 +31,21 @@ a:not(nav a):hover {
 /* ===========================
    Header & Navigation
 =========================== */
+
 header {
+  width: 100%;                /* full width of viewport */
   text-align: center;
   background: #ffffff;
   padding: 1em 0;
-  border-bottom: 1px solid #ddd;
-  width: 100%;
-  min-height: 120px;     /* ensures same height as home page header */
+  border-bottom: 1px solid #ddd;  /* gray line spans entire page */
   box-sizing: border-box;
+  min-height: 120px;          /* keeps consistent height with home page */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
 
 h1 {
   margin: 0;                   /* no top/bottom margin */
