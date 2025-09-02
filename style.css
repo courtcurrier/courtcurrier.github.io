@@ -43,22 +43,23 @@ header {
 }
 
 .header-wrapper {
-  max-width: 1000px;             /* wrapper width */
-  margin: 0 auto;                
+  max-width: 1000px;        /* matches wrapper width */
+  margin: 0 auto;            
   text-align: center;
-  padding-top: 0.5em;            /* space above the line */
-  padding-bottom: 0.25em;        /* space below the line */
+  padding-top: 0.5em;       /* space above the line */
+  padding-bottom: 0;         /* remove bottom padding; we’ll handle with pseudo-element */
 }
 
 .header-wrapper::after {
-  content: "";                    /* pseudo-element for the gray line */
+  content: "";               
   display: block;
-  width: 60%;                     /* make the line shorter than the wrapper */
-  max-width: 600px;               /* optional max width */
+  width: 80%;               /* line is 80% of wrapper width */
+  max-width: 800px;         /* optional max width */
   height: 1px;
   background-color: #ddd;
-  margin: 0.25em auto 0 auto;     /* space above line: 0.25em; line is centered */
+  margin: 1em auto 1em auto; /* 1em space above and below line (like a normal <p>) */
 }
+
 
 .header-wrapper h1 {
   margin: 0;
