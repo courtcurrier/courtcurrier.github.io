@@ -31,41 +31,35 @@ a:not(nav a):hover {
 /* ===========================
    Header & Navigation
 =========================== */
-
 header {
   text-align: center;
   background: #ffffff;
-  padding: 1em 0;
-  border-bottom: 1px solid #ddd;  /* short gray line matches wrapper width */
-  width: 100%;  /* 100% of wrapper */
-  box-sizing: border-box;
-  min-height: 120px;  /* keeps header tall enough on pages without a tagline */
+  padding: 1em 0;          /* space inside header */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;  /* vertical centering */
+  justify-content: center;
+  min-height: 120px;       /* keeps header tall enough */
+  /* no border-bottom here */
 }
 
-
-h1 {
-  margin: 0;                   /* no top/bottom margin */
-  font-size: 2em;              /* consistent size */
-  line-height: 1.2;            /* optional: tighter spacing */
+.header-wrapper {
+  max-width: 800px;        /* same as .wrapper */
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-bottom: 1px solid #ddd;  /* single gray line under nav */
+  padding-bottom: 0.5em;          /* space between nav and line */
 }
 
-.tagline {
-  font-style: italic;
-  color: #555;
-  margin: 0.2em 0 1em 0;       /* consistent spacing below h1 */
+.header-wrapper h1 {
+  margin: 0;
+  font-size: 2em;
+  line-height: 1.2;
 }
 
-header nav {
-  margin-top: 0.2em;  /* small space if needed */
-}
-
-
-nav {
-  margin-top: 0.5em;           /* spacing between tagline and nav */
+.header-wrapper nav {
+  margin-top: 0.2em;       /* snug under title */
 }
 
 nav a {
@@ -80,22 +74,14 @@ nav a:hover {
 }
 
 nav a.active {
-  color: #5ea1db;             /* highlight active page */
+  color: #5ea1db;          /* highlight active page */
 }
 
-.header-wrapper {
-  max-width: 800px;
-  margin: 0 auto;
-  border-bottom: 1px solid #ddd; /* gray line under nav */
-  text-align: center;
+.tagline {
+  font-style: italic;
+  color: #555;
+  margin: 0.2em 0 1em 0;   /* consistent spacing below h1 */
 }
-.header-wrapper h1 {
-  margin: 0;
-}
-.header-wrapper nav {
-  margin-top: 0.2em; /* snug under title */
-}
-
 
 /* ===========================
    Main content
