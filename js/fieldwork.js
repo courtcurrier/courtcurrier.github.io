@@ -6,11 +6,8 @@
 const siteImages = {
   "South Africa": [
     { src: "images/fieldwork/knp_1.jpg", caption: "Kruger National Park, South Africa" },
-    { src: "images/fieldwork/knp_2.jpg", caption: "Kruger National Park, South Africa" },
-    { src: "images/fieldwork/knp_3.jpg", caption: "Kruger National Park, South Africa" },
-    { src: "images/fieldwork/knp_4.jpg", caption: "Kruger National Park, South Africa" },
-    { src: "images/fieldwork/knp_5.jpg", caption: "Kruger National Park, South Africa" },
-    { src: "images/fieldwork/knp_6.jpg", caption: "Kruger National Park, South Africa" }
+    { src: "images/fieldwork/knp_3.jpeg", caption: "Kruger National Park, South Africa" },
+    { src: "images/fieldwork/knp_4.jpeg", caption: "Kruger National Park, South Africa" }
   ],
   "Florida": [
     { src: "images/fieldwork/abs_1.JPG", caption: "Archbold Biological Station, FL, USA" },
