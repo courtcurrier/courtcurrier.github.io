@@ -12,7 +12,7 @@ body {
 
 /* Wrapper for single-column layout */
 .wrapper {
-  max-width: 800px;        /* width of your content column */
+  max-width: 1000px;        /* width of your content column */
   width: 100%;
   padding: 2em;
   box-sizing: border-box;
@@ -41,12 +41,11 @@ header {
 }
 
 .header-wrapper {
-  max-width: 800px;      /* matches content width */
-  width: 100%;
+  max-width: 1000px;
   margin: 0 auto;
+  border-bottom: 1px solid #ddd; /* gray line under nav */
   text-align: center;
-  border-bottom: 1px solid #ddd; /* gray line */
-  padding-bottom: 0.5em;         /* space between nav and line */
+  padding-bottom: 0.5em; /* controls space below line */
 }
 
 .header-wrapper h1 {
@@ -91,7 +90,7 @@ main {
 
 .hero-video-wrapper {
   width: 100%;
-  max-width: 1400%;      /* increase maximum width */
+  max-width: 1000px;      /* increase maximum width */
   margin: 2em auto;
   border-radius: 10px;
   overflow: hidden;
@@ -121,12 +120,12 @@ main {
 
 .about-photo img {
   width: 100%;
-  max-width: 1400%;      /* fixed: use px unit */
+  max-width: 1000px;  /* same as your .wrapper max-width */
   height: auto;
   display: block;
   margin: 0 auto;
-  border-radius: 0;
 }
+
 
 /* Two-column layout under About photo */
 .about-columns {
