@@ -112,46 +112,49 @@ main {
 /* ===========================
    About page 
 =========================== */
+
 .about-photo {
   text-align: center;
-  margin: 2em auto 1em auto;    /* space above and below photo */
+  margin: 2em 0;
 }
 
 .about-photo img {
-  width: 100%;                   /* fills wrapper exactly */
+  width: 100%;
+  max-width: 1000px;  /* same as .wrapper */
   height: auto;
   display: block;
-  max-width: 100%;
+  margin: 0 auto;
 }
 
 /* Two-column layout under About photo */
 .about-columns {
   display: flex;
-  justify-content: center;       /* centers the two columns as a group */
-  gap: 3em;                      /* space between left and right columns */
+  justify-content: space-between;  /* spread left and right columns across full width */
+  gap: 2em;                        /* small gap between columns */
   margin: 2em 0;
-  flex-wrap: wrap;                /* stacks on small screens */
+  flex-wrap: wrap;                  /* stacks on small screens */
+  max-width: 1000px;                /* match photo width */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Left column wider */
 .about-left {
-  flex: 2 1 400px;               /* twice the width of the right column */
-  max-width: 600px;
-  text-align: left;
+  flex: 2 1 0;          /* twice the width of right column */
+  min-width: 0;         /* allows shrinking */
 }
 
 /* Right column narrower */
 .about-right {
-  flex: 1 1 200px;
-  max-width: 350px;
-  text-align: left;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
-/* Headings in About page columns */
+/* Headings */
 .about-left h2,
 .about-right h2 {
   margin-top: 0;
-  font-size: 1em;               /* same size as normal text */
+  font-size: 1em;
   font-weight: bold;
   margin-bottom: 0.5em;
 }
@@ -167,6 +170,7 @@ main {
 .about-right a:hover {
   text-decoration: underline;
 }
+
 
 /* ===========================
    Publications page
