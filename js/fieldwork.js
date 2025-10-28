@@ -5,8 +5,10 @@
 // Map site names to arrays of photo objects {src, caption}
 const siteImages = {
   "UK": [
+    { src: "images/fieldwork/cam_4.jpg", caption: "Where the lab magic happens! Cambridge, UK" },
     { src: "images/fieldwork/cam_1.jpg", caption: "Where the lab magic happens! Cambridge, UK" },
-    { src: "images/fieldwork/cam_2.jpg", caption: "Where the lab magic happens! Cambridge, UK" }
+    { src: "images/fieldwork/cam_2.jpg", caption: "Where the lab magic happens! Cambridge, UK" },
+    { src: "images/fieldwork/cam_3.jpg", caption: "Where the lab magic happens! Cambridge, UK" }
   ],
   "South Africa": [
     { src: "images/fieldwork/knp_1.jpg", caption: "Kruger National Park, South Africa" },
