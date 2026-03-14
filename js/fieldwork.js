@@ -35,11 +35,11 @@ const siteImages = {
     { src: "images/fieldwork/jrn_6.jpg", caption: "Jornada LTER, NM, USA" }
   ],
   "Minnesota": [
+    { src: "images/fieldwork/cdr_5.jpg", caption: "Cedar Creek LTER, MN, USA" },
     { src: "images/fieldwork/cdr_1.jpg", caption: "Cedar Creek LTER, MN, USA" },
     { src: "images/fieldwork/cdr_2.jpg", caption: "Cedar Creek LTER, MN, USA" },
     { src: "images/fieldwork/cdr_3.jpg", caption: "Cedar Creek LTER, MN, USA" },
     { src: "images/fieldwork/cdr_4.jpg", caption: "Cedar Creek LTER, MN, USA" },
-    { src: "images/fieldwork/cdr_5.jpg", caption: "Cedar Creek LTER, MN, USA" },
     { src: "images/fieldwork/cdr_6.jpg", caption: "Cedar Creek LTER, MN, USA" }
   ],
   "Colorado": [
