@@ -150,8 +150,6 @@
     // Basemaps in order of preference. If one fails to load, try the next.
     const OSM = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
     const BASEMAPS = [
-      { url: "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
-        opts: { maxZoom: 19, subdomains: "abcd", attribution: OSM + ' &copy; <a href="https://carto.com/attributions">CARTO</a>' } },
       { url: "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
         opts: { maxZoom: 16, attribution: "Tiles &copy; Esri, HERE, Garmin, &copy; OpenStreetMap contributors" } },
       { url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
