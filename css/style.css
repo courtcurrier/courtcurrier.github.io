@@ -528,3 +528,48 @@ html {
 
 
 
+
+/* ===========================
+   Phones
+=========================== */
+
+/* Never split a nav item across two lines */
+nav a { white-space: nowrap; }
+
+@media (max-width: 600px) {
+  body { font-size: 15px; }
+
+  .header-wrapper { padding: 0.75em 1em 0; }
+  .header-wrapper h1 { font-size: 1.5em; margin-bottom: 0.3em; }
+  .tagline { font-size: 0.9em; margin-bottom: 0.5em; }
+
+  /* Nav wraps by whole names, centered, a bit tighter */
+  .header-wrapper nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 1.1em;
+    margin-top: 0.5em;
+    font-size: 0.92em;
+  }
+  nav a { margin: 0; padding: 0.15em 0; }
+
+  /* Saddle Transect always starts the second line */
+  .header-wrapper nav:has(a[href="/saddle-transect.html"])::before {
+    content: "";
+    flex-basis: 100%;
+    order: 1;
+  }
+  .header-wrapper nav a[href="/saddle-transect.html"],
+  .header-wrapper nav a[href="/saddle-transect.html"] ~ a { order: 2; }
+
+  /* Side margins so text doesn't touch the screen edge */
+  main, main.wrapper { padding: 0 1.25em 2em; }
+
+  .pub-photo img { width: 100%; }
+}
+
+/* Very narrow phones: keep the first nav line to four names */
+@media (max-width: 360px) {
+  .header-wrapper nav { font-size: 0.82em; gap: 0 0.8em; }
+}
