@@ -54,6 +54,7 @@
     .ride h3 { font-size: 1em; font-weight: bold; margin: 0; }
     .ride .meta { font-size: 0.85em; color: #666; margin: 0.2em 0 1em; }
     .ride .meta span + span::before { content: " · "; }
+    .ride .meta + .meta { margin-top: -0.9em; }
 
     .photos {
       display: grid;
@@ -143,11 +144,36 @@
   let map = null;
   if (window.L) {
     map = L.map("map", { scrollWheelZoom: false }).setView([37, -106], 6);
-    L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
-      maxZoom: 19,
-      subdomains: "abcd",
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-    }).addTo(map);
+
+    // Basemaps in order of preference. If one fails to load, try the next.
+    const OSM = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+    const BASEMAPS = [
+      { url: "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+        opts: { maxZoom: 19, subdomains: "abcd", attribution: OSM + ' &copy; <a href="https://carto.com/attributions">CARTO</a>' } },
+      { url: "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+        opts: { maxZoom: 16, attribution: "Tiles &copy; Esri, HERE, Garmin, &copy; OpenStreetMap contributors" } },
+      { url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        opts: { maxZoom: 19, attribution: OSM } }
+    ];
+    let base = null;
+    function useBasemap(i) {
+      if (i >= BASEMAPS.length) { console.warn("No basemap could load."); return; }
+      if (base) map.removeLayer(base);
+      let errors = 0, loaded = 0, switched = false;
+      base = L.tileLayer(BASEMAPS[i].url, BASEMAPS[i].opts)
+        .on("tileload", () => { loaded++; })
+        .on("tileerror", () => {
+          errors++;
+          if (!switched && loaded === 0 && errors >= 3) {
+            switched = true;
+            console.warn("Basemap " + (i + 1) + " failed, trying the next one.");
+            useBasemap(i + 1);
+          }
+        })
+        .addTo(map);
+      base.bringToBack();
+    }
+    useBasemap(0);
   } else {
     document.getElementById("map").style.display = "none";
     document.querySelector(".legend").style.display = "none";
@@ -167,6 +193,13 @@
     const dt = new Date(d + "T12:00:00");
     return isNaN(dt) ? esc(d) :
       dt.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+  };
+
+  // 252 -> "4 h 12 min", 45 -> "45 min"
+  const fmtDuration = min => {
+    const h = Math.floor(min / 60), m = Math.round(min % 60);
+    if (!h) return `${m} min`;
+    return m ? `${h} h ${m} min` : `${h} h`;
   };
 
   // Blank line = new paragraph, single line break kept as <br>.
@@ -204,9 +237,21 @@
       return;
     }
     box.innerHTML = stories.map(s => {
-      const meta = [fmtDate(s.date), s.miles + " mi"];
-      if (s.climb_ft) meta.push(Number(s.climb_ft).toLocaleString() + " ft climbing");
-      if (s.location) meta.push(esc(s.location));
+      // Line 1: when and where. Line 2: the route. Line 3: the clock.
+      const when = [fmtDate(s.date)];
+      if (s.location) when.push(esc(s.location));
+
+      const route = [s.miles + " mi"];
+      if (s.climb_ft) route.push(Number(s.climb_ft).toLocaleString() + " ft elev gain");
+      if (s.pct_dirt != null) route.push(s.pct_dirt + "% dirt");
+
+      const time = [];
+      if (s.moving_min)  time.push(fmtDuration(s.moving_min) + " moving");
+      if (s.elapsed_min) time.push(fmtDuration(s.elapsed_min) + " elapsed");
+      if (s.avg_mph)     time.push(s.avg_mph + " mph avg");
+
+      const metaLine = arr => arr.length
+        ? '<p class="meta">' + arr.map(m => "<span>" + m + "</span>").join("") + "</p>" : "";
 
       const photos = (s.photos || []).map((p, i) =>
         `<a href="${esc(p)}" target="_blank" rel="noopener">` +
@@ -215,7 +260,7 @@
       return `
         <article class="ride" id="ride-${esc(s.id)}">
           <h3>${esc(s.name)}</h3>
-          <p class="meta">${meta.map(m => "<span>" + m + "</span>").join("")}</p>
+          ${metaLine(when)}${metaLine(route)}${metaLine(time)}
           ${paragraphs(s.text)}
           ${photos ? '<div class="photos">' + photos + "</div>" : ""}
           <p class="ride-links">
