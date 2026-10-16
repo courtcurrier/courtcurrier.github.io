@@ -150,10 +150,12 @@
     // Basemaps in order of preference. If one fails to load, try the next.
     const OSM = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
     const BASEMAPS = [
-      { url: "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
-        opts: { maxZoom: 16, attribution: "Tiles &copy; Esri, HERE, Garmin, &copy; OpenStreetMap contributors" } },
-      { url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-        opts: { maxZoom: 19, attribution: OSM } }
+      { url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
+        opts: { maxZoom: 19, attribution: "Tiles &copy; Esri, HERE, Garmin, USGS, NGA, &copy; OpenStreetMap contributors" } },
+      { url: "https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}",
+        opts: { maxZoom: 16, attribution: "Tiles courtesy of the <a href=\"https://www.usgs.gov/\">U.S. Geological Survey</a>" } },
+      { url: "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
+        opts: { maxZoom: 17, attribution: OSM + ', SRTM | Style &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (CC-BY-SA)' } }
     ];
     let base = null;
     function useBasemap(i) {
