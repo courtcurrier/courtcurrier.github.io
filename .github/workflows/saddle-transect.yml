@@ -1,0 +1,73 @@
+# Saddle Transect: pulls rides from Strava every night and commits the map data.
+# Run it by hand anytime: repo > Actions > "Saddle Transect" > Run workflow.
+
+name: Saddle Transect
+
+on:
+  schedule:
+    - cron: "23 10 * * *"   # once a day, 10:23 UTC (early morning in the US)
+  workflow_dispatch:
+    inputs:
+      recheck_all:
+        description: "Re-check every ride for #saddletransect (use after tagging old rides)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: saddle-transect
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - name: Install R packages
+        run: Rscript -e 'install.packages(c("httr2", "jsonlite"))'
+
+      - name: Pull rides from Strava
+        env:
+          STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
+          STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}
+          STRAVA_REFRESH_TOKEN: ${{ secrets.STRAVA_REFRESH_TOKEN }}
+          RECHECK_ALL: ${{ inputs.recheck_all || 'false' }}
+          NEW_TOKEN_FILE: ${{ runner.temp }}/new_refresh_token
+        run: Rscript scripts/update_saddle_transect.R
+
+      # Strava sometimes swaps the refresh token and retires the old one.
+      # This saves the new one back into the repo's secrets so tomorrow's run works.
+      - name: Save new Strava token
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          f="${{ runner.temp }}/new_refresh_token"
+          if [ -s "$f" ]; then
+            if [ -z "$GH_TOKEN" ]; then
+              echo "::error::Strava issued a new refresh token but GH_PAT is not set. Re-run strava_token_setup.R."
+              exit 1
+            fi
+            gh secret set STRAVA_REFRESH_TOKEN --repo "${{ github.repository }}" < "$f"
+            echo "Refresh token updated."
+          fi
+
+      - name: Commit changes
+        run: |
+          git config user.name "saddle-transect-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A data/saddle-transect
+          [ -d images/saddle-transect ] && git add -A images/saddle-transect || true
+          if git diff --cached --quiet; then
+            echo "No new rides."
+          else
+            git commit -m "Saddle Transect: nightly ride update"
+            git push
+          fi
