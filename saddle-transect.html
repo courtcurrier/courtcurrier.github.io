@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Saddle Transect | Courtney M. Currier</title>
+  <meta name="description" content="Saddle Transect: natural history on two wheels.">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+
+  <style>
+    :root {
+      --ink: #2b2a26;
+      --muted: #6b665c;
+      --paper: #faf7f1;
+      --rule: #ddd5c4;
+      --accent: #9a5b2f;   /* dry soil / rust */
+      --faint: #5b6b73;    /* every-ride lines */
+      --max: 760px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.65;
+    }
+
+    a { color: var(--accent); }
+
+    /* ---------- site header ---------- */
+    .site-header {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 1.5rem 16px 0;
+      font-family: system-ui, sans-serif;
+    }
+    .site-header .name {
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .site-header nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1.1rem;
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+    }
+    .site-header nav a { text-decoration: none; color: var(--muted); }
+    .site-header nav a.current { color: var(--accent); font-weight: 600; }
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 16px 4rem;
+    }
+
+    /* ---------- intro ---------- */
+    .intro { padding: 2.5rem 0 1.5rem; }
+    .intro h1 { margin: 0; font-size: 2.4rem; font-weight: 400; }
+    .intro .subtitle { margin: 0.2rem 0 1rem; color: var(--muted); font-style: italic; }
+
+    /* ---------- map ---------- */
+    #map {
+      height: 460px;
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      background: #e9e4d8;
+    }
+    @media (max-width: 600px) { #map { height: 340px; } }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1.4rem;
+      font-family: system-ui, sans-serif;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin: 0.6rem 0 0;
+    }
+    .legend i {
+      display: inline-block;
+      width: 26px;
+      vertical-align: middle;
+      margin-right: 0.4rem;
+    }
+    .legend .all   { border-top: 2px solid var(--faint); opacity: 0.5; }
+    .legend .story { border-top: 4px solid var(--accent); }
+
+    .map-note {
+      font-family: system-ui, sans-serif;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .leaflet-popup-content { font-family: system-ui, sans-serif; font-size: 0.85rem; }
+    .leaflet-popup-content b { font-family: Georgia, serif; font-size: 0.95rem; font-weight: 400; }
+
+    /* ---------- posts ---------- */
+    #posts { margin-top: 2rem; border-top: 1px solid var(--rule); }
+
+    .ride {
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--rule);
+      transition: background-color 1.2s ease;
+      scroll-margin-top: 1rem;
+    }
+    .ride.flash { background-color: #f1e3d3; }
+
+    .ride h2 { margin: 0; font-size: 1.6rem; font-weight: 400; }
+    .ride .meta {
+      font-family: system-ui, sans-serif;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin: 0.3rem 0 1.2rem;
+    }
+    .ride .meta span + span::before { content: " · "; }
+
+    .photos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+    }
+    .photos a { display: block; }
+    .photos img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      border-radius: 3px;
+      background: var(--rule);
+    }
+
+    .ride-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.2rem;
+      font-family: system-ui, sans-serif;
+      font-size: 0.85rem;
+    }
+    .ride-links button {
+      font: inherit;
+      color: var(--accent);
+      background: none;
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <a class="name" href="https://courtcurrier.github.io/">COURTNEY M. CURRIER</a>
+  <nav>
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="fieldwork.html">Fieldwork</a>
+    <a href="art.html">Paintings</a>
+    <a class="current" href="saddle-transect.html">Saddle Transect</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="intro">
+    <h1>Saddle Transect</h1>
+    <p class="subtitle">natural history on two wheels</p>
+    <p>
+      [Your intro goes here. A few sentences on why you ride slow and what you
+      notice from the saddle that you'd miss from a car.]
+    </p>
+  </section>
+
+  <section aria-label="Map of rides">
+    <div id="map"></div>
+    <p class="legend">
+      <span><i class="all"></i>every ride</span>
+      <span><i class="story"></i>rides with a story (click one)</span>
+    </p>
+  </section>
+
+  <!--
+    Posts are built automatically from data/saddle-transect/stories.json.
+    To add one: put #saddletransect anywhere in a Strava ride's description.
+    The nightly GitHub Action picks it up, along with its photos.
+  -->
+  <section id="posts" aria-label="Ride stories"></section>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(function () {
+  const DATA = "data/saddle-transect/";
+  const css = getComputedStyle(document.documentElement);
+  const ACCENT = css.getPropertyValue("--accent").trim();
+  const FAINT  = css.getPropertyValue("--faint").trim();
+
+  const styleAll   = { color: FAINT,  weight: 1.5, opacity: 0.4 };
+  const styleStory = { color: ACCENT, weight: 4,   opacity: 0.9 };
+  const styleHover = { color: ACCENT, weight: 7,   opacity: 1   };
+
+  // If the map library can't load (blocked, offline), the posts still show.
+  let map = null;
+  if (window.L) {
+    map = L.map("map", { scrollWheelZoom: false }).setView([37, -106], 6);
+    L.tileLayer("https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png", {
+      maxZoom: 17,
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, SRTM | Style &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (CC-BY-SA)'
+    }).addTo(map);
+  } else {
+    document.getElementById("map").style.display = "none";
+    document.querySelector(".legend").style.display = "none";
+  }
+
+  const storyLayers = {};   // ride id -> Leaflet layer
+
+  const getJSON = (file, fallback) =>
+    fetch(DATA + file, { cache: "no-cache" })
+      .then(r => (r.ok ? r.json() : fallback))
+      .catch(() => fallback);
+
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c =>
+    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+  const fmtDate = d => {
+    const dt = new Date(d + "T12:00:00");
+    return isNaN(dt) ? esc(d) :
+      dt.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+  };
+
+  // Blank line = new paragraph, single line break kept as <br>.
+  const paragraphs = text =>
+    String(text || "").trim().split(/\n\s*\n/).filter(Boolean)
+      .map(p => "<p>" + esc(p.trim()).replace(/\n/g, "<br>") + "</p>").join("");
+
+  function flash(el) {
+    el.classList.add("flash");
+    setTimeout(() => el.classList.remove("flash"), 1600);
+  }
+
+  function goToPost(id) {
+    const el = document.getElementById("ride-" + id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    history.replaceState(null, "", "#ride-" + id);
+    flash(el);
+  }
+
+  function showOnMap(id) {
+    const layer = storyLayers[id];
+    if (!map || !layer) return;
+    document.getElementById("map").scrollIntoView({ behavior: "smooth", block: "center" });
+    map.fitBounds(layer.getBounds(), { padding: [30, 30], maxZoom: 14 });
+    layer.setStyle(styleHover);
+    layer.bringToFront();
+    setTimeout(() => layer.setStyle(styleStory), 1800);
+  }
+
+  function renderPosts(stories) {
+    const box = document.getElementById("posts");
+    if (!stories.length) {
+      box.innerHTML = '<p class="map-note" style="padding-top:1.5rem">No stories yet. ' +
+        'Add #saddletransect to a Strava ride description and it will show up here after the next nightly update.</p>';
+      return;
+    }
+    box.innerHTML = stories.map(s => {
+      const meta = [fmtDate(s.date), s.miles + " mi"];
+      if (s.climb_ft) meta.push(Number(s.climb_ft).toLocaleString() + " ft climbing");
+      if (s.location) meta.push(esc(s.location));
+
+      const photos = (s.photos || []).map((p, i) =>
+        `<a href="${esc(p)}" target="_blank" rel="noopener">` +
+        `<img src="${esc(p)}" alt="Photo ${i + 1} from ${esc(s.name)}" loading="lazy"></a>`).join("");
+
+      return `
+        <article class="ride" id="ride-${esc(s.id)}">
+          <h2>${esc(s.name)}</h2>
+          <p class="meta">${meta.map(m => "<span>" + m + "</span>").join("")}</p>
+          ${paragraphs(s.text)}
+          ${photos ? '<div class="photos">' + photos + "</div>" : ""}
+          <p class="ride-links">
+            ${map ? `<button type="button" data-show="${esc(s.id)}">Show on map</button>` : ""}
+            <a href="${esc(s.strava_url)}" target="_blank" rel="noopener">View on Strava</a>
+          </p>
+        </article>`;
+    }).join("");
+
+    box.querySelectorAll("button[data-show]").forEach(b =>
+      b.addEventListener("click", () => showOnMap(b.dataset.show)));
+  }
+
+  function renderMap(rides) {
+    const feats = rides.features || [];
+    if (!map || !feats.length) return;
+
+    // Every ride first, faint, so the story lines sit on top.
+    const all = L.geoJSON(
+      { type: "FeatureCollection", features: feats.filter(f => !f.properties.story) },
+      {
+        style: styleAll,
+        onEachFeature: (f, layer) => {
+          const p = f.properties;
+          layer.bindPopup(`<b>${esc(p.name)}</b><br>${fmtDate(p.date)} · ${p.miles} mi`);
+        }
+      }
+    ).addTo(map);
+
+    L.geoJSON(
+      { type: "FeatureCollection", features: feats.filter(f => f.properties.story) },
+      {
+        style: styleStory,
+        onEachFeature: (f, layer) => {
+          const p = f.properties;
+          storyLayers[p.id] = layer;
+          layer.bindTooltip(`${esc(p.name)} · ${fmtDate(p.date)}`, { sticky: true });
+          layer.on("mouseover", () => layer.setStyle(styleHover));
+          layer.on("mouseout",  () => layer.setStyle(styleStory));
+          layer.on("click",     () => goToPost(p.id));
+        }
+      }
+    ).addTo(map);
+
+    const bounds = L.geoJSON({ type: "FeatureCollection", features: feats }).getBounds();
+    if (bounds.isValid()) map.fitBounds(bounds, { padding: [20, 20] });
+  }
+
+  Promise.all([
+    getJSON("rides.geojson", { features: [] }),
+    getJSON("stories.json", [])
+  ]).then(([rides, stories]) => {
+    renderPosts(stories);
+    renderMap(rides);
+    // Shared links like saddle-transect.html#ride-123 land on that post.
+    const m = location.hash.match(/^#ride-(\d+)$/);
+    if (m) setTimeout(() => goToPost(m[1]), 300);
+  });
+})();
+</script>
+
+</body>
+</html>
