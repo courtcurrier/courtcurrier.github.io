@@ -22,7 +22,10 @@ env <- function(x, default) { v <- Sys.getenv(x); if (nzchar(v)) v else default 
 
 TAG          <- env("TAG", "#saddletransect")
 TRIM_M       <- as.numeric(env("TRIM_M", "400"))      # meters cut off each end of every ride
-MAX_DETAIL   <- as.integer(env("MAX_DETAIL", "80"))   # detail lookups per run (Strava rate limit)
+MAX_DETAIL   <- as.integer(env("MAX_DETAIL", "80"))   # ride lookups on a normal nightly run
+SCAN_ALL     <- tolower(env("SCAN_ALL", "false")) == "true"   # "scan every ride" button
+SCAN_BUDGET  <- as.integer(env("SCAN_BUDGET", "900")) # lookups when scanning everything (Strava: ~1000/day)
+MAX_MINUTES  <- as.numeric(env("MAX_MINUTES", "300")) # stop looking up rides after this long, save, and finish
 RECHECK_DAYS <- as.integer(env("RECHECK_DAYS", "21")) # recent rides re-checked for a newly added tag
 RIDE_TYPES   <- c("Ride", "GravelRide", "MountainBikeRide", "EBikeRide",
                   "EMountainBikeRide", "Velomobile", "Handcycle")
@@ -57,6 +60,27 @@ if (!identical(tok$refresh_token, old_refresh)) {
 }
 
 rate_limited <- FALSE
+t_start <- Sys.time()
+
+# Strava allows ~100 reads per 15 minutes and ~1000 per day. It reports usage in
+# response headers, so slow down near the 15-minute cap and stop near the daily one.
+pace <- function(resp) {
+  use <- resp_header(resp, "x-readratelimit-usage") %||% resp_header(resp, "x-ratelimit-usage")
+  lim <- resp_header(resp, "x-readratelimit-limit") %||% resp_header(resp, "x-ratelimit-limit")
+  if (is.null(use) || is.null(lim)) return(invisible())
+  use <- as.numeric(strsplit(use, ",")[[1]]); lim <- as.numeric(strsplit(lim, ",")[[1]])
+  if (length(use) < 2 || length(lim) < 2) return(invisible())
+  if (use[2] >= lim[2] - 10) {
+    message("Close to Strava's daily limit. Saving progress; the rest happens next run.")
+    rate_limited <<- TRUE
+  } else if (use[1] >= lim[1] - 3) {
+    now  <- as.POSIXlt(Sys.time(), tz = "UTC")
+    wait <- (15 - now$min %% 15) * 60 - now$sec + 5   # Strava's windows reset at :00, :15, :30, :45
+    message(sprintf("  pausing %.0f min for Strava's 15-minute limit...", wait / 60))
+    Sys.sleep(wait)
+  }
+}
+
 strava_get <- function(path, query = list()) {
   if (rate_limited) return(NULL)
   resp <- request(paste0(API, path)) |>
@@ -70,6 +94,7 @@ strava_get <- function(path, query = list()) {
     rate_limited <<- TRUE
     return(NULL)
   }
+  pace(resp)
   if (status == 404) return(NULL)
   if (status >= 400) stop("Strava returned ", status, " for ", path, ": ", resp_body_string(resp))
   resp_body_json(resp, simplifyVector = FALSE)
@@ -101,29 +126,30 @@ names(acts) <- ids
 read_json_or <- function(path, default) {
   if (file.exists(path)) fromJSON(path, simplifyVector = FALSE) else default
 }
-checked <- read_json_or(file.path(OUT_DIR, "checked.json"), list())   # id -> TRUE/FALSE (tagged?)
+checked <- read_json_or(file.path(OUT_DIR, "checked.json"), list())   # id -> list(tagged, at)
+# Older versions stored just TRUE/FALSE; treat those as checked long ago.
+checked <- lapply(checked, \(x) if (is.list(x)) x else list(tagged = isTRUE(x), at = "2000-01-01"))
 stories <- read_json_or(file.path(OUT_DIR, "stories.json"), list())
 names(stories) <- vapply(stories, \(s) s$id, "")
 
 start_dates <- as.Date(substr(vapply(acts, \(a) a$start_date_local %||% "", ""), 1, 10))
 recent      <- ids[!is.na(start_dates) & start_dates >= Sys.Date() - RECHECK_DAYS]
+no_dirt     <- names(stories)[vapply(stories, \(s) is.null(s$pct_dirt), TRUE)]  # retry failed surface lookups
+never       <- setdiff(ids, names(checked))
+never       <- never[order(start_dates[match(never, ids)], decreasing = TRUE)]
 
-no_dirt  <- names(stories)[vapply(stories, \(s) is.null(s$pct_dirt), TRUE)]   # retry failed surface lookups
-# Rides you asked for by hand: Strava links or IDs, separated by commas, spaces or new lines.
-requested <- regmatches(env("RIDE_IDS", ""), gregexpr("[0-9]{6,}", env("RIDE_IDS", "")))[[1]]
-unknown   <- setdiff(requested, ids)
-if (length(unknown)) message("Not found among your rides (not a ride, or set to Only You?): ",
-                             paste(unknown, collapse = ", "))
-requested <- intersect(requested, ids)
-if (length(requested)) message("Re-checking ", length(requested), " ride(s) you asked for.")
+# Order of business: rides never looked at, then recent rides, then stories missing
+# % dirt, then everything else, longest-since-checked first. Every night works a bit
+# further down that list, so an old ride you tag gets found within a couple of weeks.
+first    <- union(union(never, recent), intersect(no_dirt, ids))
+rest     <- setdiff(ids, first)
+last_at  <- vapply(rest, \(id) checked[[id]]$at %||% "2000-01-01", "")
+to_check <- c(first, rest[order(last_at)])
 
-to_check <- union(union(setdiff(ids, names(checked)), recent), no_dirt)
-to_check <- to_check[order(start_dates[match(to_check, ids)], decreasing = TRUE)]  # newest first
-to_check <- c(requested, setdiff(to_check, requested))                            # yours go first
-if (length(to_check) > MAX_DETAIL) {
-  message(length(to_check), " rides to check; doing ", MAX_DETAIL, " now, the rest on later runs.")
-  to_check <- head(to_check, max(MAX_DETAIL, length(requested)))
-}
+budget   <- if (SCAN_ALL) SCAN_BUDGET else MAX_DETAIL
+to_check <- head(to_check, budget)
+message(if (SCAN_ALL) "Scanning every ride for the tag (paced for Strava's limits). " else "",
+        "Looking up ", length(to_check), " rides this run (", length(never), " never checked).")
 
 # ---- geometry helpers ----------------------------------------------------
 # Google encoded polyline -> matrix of (lat, lng). Base R so the Action needs no extra packages.
@@ -282,12 +308,16 @@ get_photos <- function(id, detail) {
 }
 
 for (id in to_check) {
+  if (difftime(Sys.time(), t_start, units = "mins") > MAX_MINUTES) {
+    message("Out of time for this run. Saving progress; the rest happens next run.")
+    break
+  }
   d <- strava_get(paste0("/activities/", id))
   if (rate_limited) break
   if (is.null(d)) next
   desc   <- d$description %||% ""
   tagged <- grepl(TAG, desc, ignore.case = TRUE)
-  checked[[id]] <- tagged
+  checked[[id]] <- list(tagged = tagged, at = format(Sys.Date()))
 
   if (tagged) {
     message("  story: ", d$name)
