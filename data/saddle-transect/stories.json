@@ -19,5 +19,55 @@
       "images/saddle-transect/20536110765/7D0BEFBA-EA20-48EB-8C74-4090D91267F7.jpg"
     ],
     "strava_url": "https://www.strava.com/activities/20536110765"
+  },
+  {
+    "id": "19565302547",
+    "name": "“Morning Gravel Ride”",
+    "date": "2026-07-30",
+    "miles": 340.4,
+    "climb_ft": 27802,
+    "moving_min": 2231,
+    "elapsed_min": 3085,
+    "avg_mph": 9.2,
+    "location": "",
+    "text": "Dorset Divide 2026 🌞\n\nwow, what a stunning place and amazing community of people! it was so nice being back in the UK. how to describe the cycling here? bumpy bridleways, ensnaring bramble and rogue haystacks, rolling hills overlooking thatched houses and castle ruins, coastal cliffs, purple hued heath, ancient woodlands… Dorset really has it all.",
+    "photos": [
+      "images/saddle-transect/19565302547/F44A6E1D-90A9-41DE-AB99-87949BB7135A.jpg",
+      "images/saddle-transect/19565302547/B6034D05-AD46-420E-B490-868A44B7BE64.jpg",
+      "images/saddle-transect/19565302547/1C5AF7BD-7C38-4599-8619-D43A360C6109.jpg",
+      "images/saddle-transect/19565302547/D5B67F54-5B29-4887-949B-7EB2A637B3FE.jpg",
+      "images/saddle-transect/19565302547/CAE873BC-E516-4D65-97F8-F4731594876A.jpg",
+      "images/saddle-transect/19565302547/50FE47B3-330A-47F8-9ED8-B7F9786A07E2.jpg",
+      "images/saddle-transect/19565302547/CEE271D0-E92E-4840-B2EA-CE55236155BF.jpg",
+      "images/saddle-transect/19565302547/6E7FDD15-93F6-4D9A-B372-8AC4D1229AD0.jpg",
+      "images/saddle-transect/19565302547/3202862D-8296-485C-A4F6-C7549DA7F11A.jpg",
+      "images/saddle-transect/19565302547/26B2A5B4-175C-462D-BC7D-B34781FC8722.jpg"
+    ],
+    "strava_url": "https://www.strava.com/activities/19565302547"
+  },
+  {
+    "id": "14236937976",
+    "name": "DD2025",
+    "date": "2025-04-18",
+    "miles": 374.1,
+    "climb_ft": 27927,
+    "moving_min": 2448,
+    "elapsed_min": 3712,
+    "avg_mph": 9.2,
+    "location": "",
+    "text": "Dales Divide 2025 🦔 this was extremely tough, but getting acquainted with the moors and nighttime riding was such a treat. massive thanks to friends and family for the encouragement!",
+    "photos": [
+      "images/saddle-transect/14236937976/705E713E-4728-4FF3-8E8A-066778C1B4B0.jpg",
+      "images/saddle-transect/14236937976/70FB31FB-F51A-4862-B67E-B996BF275813.jpg",
+      "images/saddle-transect/14236937976/5FE9647E-B4AC-4F2D-9AC5-9CCC6B07A8DA.jpg",
+      "images/saddle-transect/14236937976/38D02729-C4FD-495C-BE38-A2A2BD01A557.jpg",
+      "images/saddle-transect/14236937976/821759C6-CD20-4364-A6B7-8A198004FAF1.jpg",
+      "images/saddle-transect/14236937976/A7861AB1-B8DD-4949-BBC4-B94A833AD750.jpg",
+      "images/saddle-transect/14236937976/446F22AC-C9FA-458C-B566-D7231C08A689.jpg",
+      "images/saddle-transect/14236937976/0F69D4FE-03ED-4499-BFCC-C9AFD7ADCF7A.jpg",
+      "images/saddle-transect/14236937976/B7D2E51F-6B93-422E-8E14-6E726828F116.jpg",
+      "images/saddle-transect/14236937976/BE5BA1AE-35CF-46CB-B544-B0DF443E3498.jpg"
+    ],
+    "strava_url": "https://www.strava.com/activities/14236937976"
   }
 ]
