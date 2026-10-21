@@ -24,7 +24,6 @@ TAG          <- env("TAG", "#saddletransect")
 TRIM_M       <- as.numeric(env("TRIM_M", "400"))      # meters cut off each end of every ride
 MAX_DETAIL   <- as.integer(env("MAX_DETAIL", "80"))   # detail lookups per run (Strava rate limit)
 RECHECK_DAYS <- as.integer(env("RECHECK_DAYS", "21")) # recent rides re-checked for a newly added tag
-RECHECK_ALL  <- tolower(env("RECHECK_ALL", "false")) == "true"
 RIDE_TYPES   <- c("Ride", "GravelRide", "MountainBikeRide", "EBikeRide",
                   "EMountainBikeRide", "Velomobile", "Handcycle")
 API          <- env("STRAVA_API_BASE", "https://www.strava.com/api/v3")
@@ -110,11 +109,20 @@ start_dates <- as.Date(substr(vapply(acts, \(a) a$start_date_local %||% "", ""),
 recent      <- ids[!is.na(start_dates) & start_dates >= Sys.Date() - RECHECK_DAYS]
 
 no_dirt  <- names(stories)[vapply(stories, \(s) is.null(s$pct_dirt), TRUE)]   # retry failed surface lookups
-to_check <- if (RECHECK_ALL) ids else union(union(setdiff(ids, names(checked)), recent), no_dirt)
+# Rides you asked for by hand: Strava links or IDs, separated by commas, spaces or new lines.
+requested <- regmatches(env("RIDE_IDS", ""), gregexpr("[0-9]{6,}", env("RIDE_IDS", "")))[[1]]
+unknown   <- setdiff(requested, ids)
+if (length(unknown)) message("Not found among your rides (not a ride, or set to Only You?): ",
+                             paste(unknown, collapse = ", "))
+requested <- intersect(requested, ids)
+if (length(requested)) message("Re-checking ", length(requested), " ride(s) you asked for.")
+
+to_check <- union(union(setdiff(ids, names(checked)), recent), no_dirt)
 to_check <- to_check[order(start_dates[match(to_check, ids)], decreasing = TRUE)]  # newest first
+to_check <- c(requested, setdiff(to_check, requested))                            # yours go first
 if (length(to_check) > MAX_DETAIL) {
   message(length(to_check), " rides to check; doing ", MAX_DETAIL, " now, the rest on later runs.")
-  to_check <- head(to_check, MAX_DETAIL)
+  to_check <- head(to_check, max(MAX_DETAIL, length(requested)))
 }
 
 # ---- geometry helpers ----------------------------------------------------
