@@ -8,10 +8,10 @@ on:
     - cron: "23 10 * * *"   # once a day, 10:23 UTC (early morning in the US)
   workflow_dispatch:
     inputs:
-      rides:
-        description: "Old rides you tagged or edited: paste their Strava links, separated by commas"
-        type: string
-        required: false
+      scan_all:
+        description: "Scan every ride for #saddletransect now (slow: 2 to 3 hours, paced for Strava's limits)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -23,6 +23,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 340
     steps:
       - uses: actions/checkout@v5
 
@@ -38,7 +39,7 @@ jobs:
           STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
           STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}
           STRAVA_REFRESH_TOKEN: ${{ secrets.STRAVA_REFRESH_TOKEN }}
-          RIDE_IDS: ${{ inputs.rides }}
+          SCAN_ALL: ${{ inputs.scan_all || 'false' }}
           NEW_TOKEN_FILE: ${{ runner.temp }}/new_refresh_token
         run: Rscript scripts/update_saddle_transect.R
 
