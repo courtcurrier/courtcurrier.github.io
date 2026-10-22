@@ -44,5 +44,28 @@
       "images/saddle-transect/19565302547/26B2A5B4-175C-462D-BC7D-B34781FC8722.jpg"
     ],
     "strava_url": "https://www.strava.com/activities/19565302547"
+  },
+  {
+    "id": "18008182576",
+    "name": "Stagecoach 400",
+    "date": "2026-04-03",
+    "miles": 376.8,
+    "climb_ft": 28514,
+    "moving_min": 2742,
+    "elapsed_min": 4357,
+    "avg_mph": 8.2,
+    "location": "",
+    "text": "I think I’ll be processing the coyote canyon experience for a while…",
+    "photos": [
+      "images/saddle-transect/18008182576/179BD74D-4578-478E-ADC2-D0B1C36DD3D4.jpg",
+      "images/saddle-transect/18008182576/3A054841-F59C-4FCC-8E04-318764596114.jpg",
+      "images/saddle-transect/18008182576/A41CA115-EB5A-448C-B0B7-CF8973101F8E.jpg",
+      "images/saddle-transect/18008182576/89C5E010-D27C-4A5B-BFCD-DC2A15E5B4E0.jpg",
+      "images/saddle-transect/18008182576/D860FB40-0755-4129-8EEF-FD9EECDAD754.jpg",
+      "images/saddle-transect/18008182576/C5F4BE56-AC13-48F2-AB45-2126BF9A2161.jpg",
+      "images/saddle-transect/18008182576/08AA9102-97B7-46F5-BD6B-1B748152B8D1.jpg",
+      "images/saddle-transect/18008182576/A4B91DBF-9F02-433A-81A0-801B18508861.jpg"
+    ],
+    "strava_url": "https://www.strava.com/activities/18008182576"
   }
 ]
